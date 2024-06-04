@@ -4,9 +4,30 @@
 <div>
   <h1>Dernières annonces</h1>
   <ul>
-    <li>Annonce 1</li>
-    <li>Annonce 2</li>
+    <% @last_ads.each do |ad|  %>
+      <li>
+        <div>
+          <%# <%= ad.user %> 
+          <%= ad.content %>
+          <%= ad.created_at %>
+        </div>
+      </li>
+      <% end %>
   </ul>
 </div>
 
 <%# To see bests stages nearest to me %>
+<div>
+  <h1>Scènes les mieux notées</h1>
+  <ul>
+    <% @best_stages.each do |stage|  %>
+      <li>
+        <div>
+          <%= stage.user %>
+          <%= stage.description %>
+          <%= stage.created_at %>
+        </div>
+      </li>
+      <% end %>
+  </ul>
+</div>
