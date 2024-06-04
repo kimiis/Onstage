@@ -11,8 +11,16 @@ class ArtistsController < ApplicationController
   def news
     @artist = Artist.find(params[:id])
     respond_to do |format|
-      format.html { render partial: 'news' }
-      format.js
+      format.html { render partial: 'artists/news' }
+      format.js { render partial: 'artists/news', locals: { artist: @artist } }
+    end
+  end
+
+  def photos
+    @artist = Artist.find(params[:id])
+    respond_to do |format|
+      format.html { render partial: 'artists/photos' }
+      format.js { render partial: 'artists/photos', locals: { artist: @artist } }
     end
   end
 

@@ -14,18 +14,23 @@
       <%# <p>add rating</p> %>
     </div>
 
-    <div class="navigation">
+    <div data-controller="tabs">
+      <div class="navigation" >
       <ul>
-        <li><%= link_to 'News', artist_path(@artist), remote: true, class: 'nav-link' %></li>
-        <li><%= link_to 'Photos', artist_path(@artist), remote: true, class: 'nav-link' %></li>
+      <li><%= link_to 'News', news_artist_path(@artist), data: { action: 'click->tabs#load', tabs_target: 'link' } %></li>
+      <li><%= link_to 'Photos', photos_artist_path(@artist), data: { action: 'click->tabs#load', tabs_target: 'link' } %></li>
+      <li><%= link_to 'Planning', plannings_artist_path(@artist), data: { action: 'click->tabs#load', tabs_target: 'link' } %></li>
+      <li><%= link_to 'About us', aboutUs_artist_path(@artist), data: { action: 'click->tabs#load', tabs_target: 'link' } %></li>
       </ul>
+      </div>
+
+      <div class="content" data-tabs-target="content"></div>
+
     </div>
 
-    <div class="content">
-      <%= render 'artists/new', artist: @artist %>
-    </div>
 
   </div>
+
 <%= link_to 'Edit', edit_artist_path(@artist) %> |
 <%= link_to 'Back', artists_path %>
   </div>
