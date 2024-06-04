@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_04_094253) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_04_103606) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,7 +42,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_04_094253) do
   create_table "bookings", force: :cascade do |t|
     t.string "status"
     t.bigint "artist_id", null: false
-    t.bigint "ad_id", null: false
     t.bigint "stage_id", null: false
     t.date "date_start"
     t.date "date_end"
@@ -50,7 +49,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_04_094253) do
     t.datetime "updated_at", null: false
     t.integer "rating_value"
     t.text "rating_comment"
-    t.index ["ad_id"], name: "index_bookings_on_ad_id"
     t.index ["artist_id"], name: "index_bookings_on_artist_id"
     t.index ["stage_id"], name: "index_bookings_on_stage_id"
   end
@@ -101,7 +99,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_04_094253) do
   add_foreign_key "ads", "artists"
   add_foreign_key "ads", "stages"
   add_foreign_key "artists", "users"
-  add_foreign_key "bookings", "ads"
   add_foreign_key "bookings", "artists"
   add_foreign_key "bookings", "stages"
   add_foreign_key "messages", "conversations"
