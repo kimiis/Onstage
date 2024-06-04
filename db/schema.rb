@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_04_103606) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_04_125926) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -43,15 +43,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_04_103606) do
   end
 
   create_table "ads", force: :cascade do |t|
-    t.bigint "artist_id", null: false
-    t.bigint "stage_id", null: false
     t.text "content"
     t.date "date_start"
     t.date "date_end"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["artist_id"], name: "index_ads_on_artist_id"
-    t.index ["stage_id"], name: "index_ads_on_stage_id"
+    t.integer "user_id", null: false
   end
 
   create_table "artists", force: :cascade do |t|
@@ -126,8 +123,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_04_103606) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "ads", "artists"
-  add_foreign_key "ads", "stages"
   add_foreign_key "artists", "users"
   add_foreign_key "bookings", "artists"
   add_foreign_key "bookings", "stages"

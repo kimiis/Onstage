@@ -8,7 +8,14 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
 
-  resources :artists, only: [:show, :edit, :update, :destroy, :index ]
+  resources :artists, only: [:show, :edit, :update, :destroy, :index ] do
+    member do
+      get :news
+      get :photos
+      get :plannings
+      get :aboutUs
+    end
+  end
   resources :ads, only: [:new, :create, :edit, :update, :destroy]
   resources :bookings, only: [:index, :show, :update]
   # do
