@@ -7,16 +7,12 @@ export default class extends Controller {
   async load(event) {
     event.preventDefault()
     const url = event.currentTarget.getAttribute("href")
-    console.log(url);
-
+    this.contentTarget.innerHTML = ""
     try {
       const response = await fetch(url)
-      console.log(response);
       if (response.ok) {
         const html = await response.text()
-        console.log("ok");
-        this.contentTarget.outerHTML = html
-        console.log(this.contentTarget.innerHTML);
+        this.contentTarget.innerHTML = html
       } else {
         console.error("Failed to load content", response.status, response.statusText)
       }
