@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_03_205426) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_04_091834) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -71,19 +71,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_03_205426) do
     t.index ["sender_id"], name: "index_messages_on_sender_id"
   end
 
-  create_table "ratings", force: :cascade do |t|
-    t.bigint "booking_id", null: false
-    t.bigint "artist_id", null: false
-    t.bigint "stage_id", null: false
-    t.integer "value"
-    t.string "comment"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["artist_id"], name: "index_ratings_on_artist_id"
-    t.index ["booking_id"], name: "index_ratings_on_booking_id"
-    t.index ["stage_id"], name: "index_ratings_on_stage_id"
-  end
-
   create_table "stages", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "name"
@@ -118,8 +105,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_03_205426) do
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users", column: "receiver_id"
   add_foreign_key "messages", "users", column: "sender_id"
-  add_foreign_key "ratings", "artists"
-  add_foreign_key "ratings", "bookings"
-  add_foreign_key "ratings", "stages"
   add_foreign_key "stages", "users"
 end
