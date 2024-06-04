@@ -8,6 +8,14 @@ class ArtistsController < ApplicationController
     @bookings = @artist.bookings
   end
 
+  def news
+    @artist = Artist.find(params[:id])
+    respond_to do |format|
+      format.html { render partial: 'news' }
+      format.js
+    end
+  end
+
   def edit
   end
 
