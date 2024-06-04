@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'artist/index'
+  get 'artist/show'
+  get 'artist/edit'
+  get 'artist/update'
+  get 'artist/destroy'
   devise_for :users
   root to: "pages#home"
 
