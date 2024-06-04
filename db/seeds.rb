@@ -44,12 +44,7 @@ stage_isa = Stage.create!({ user: isa, name: "Stage 4", description: "Descriptio
 stage_kelly = Stage.create!({ user: kelly, name: "Stage 5", description: "Description stage 5", address: "11 Allée des Innovateurs, 44400 Nantes", phone_number: "123-456-7890" })
 puts "created #{Stage.count} stages"
 
-# seed ads
-puts "create ads"
-
-puts "created #{Ads.count} ads"
-
 # seed booking
 puts "create bookings"
-booking_1 = Booking.create!({ status: 'confirmed', artist: artist_john, ad_id: , stage:stage_tony ,date_start: , date_end: })
+booking_1 = Booking.create!({ status: 'confirmed', artist: artist_john, stage: stage_tony, date_start: Time.now, date_end: Time.now })
 puts "created #{Booking.count} bookings"

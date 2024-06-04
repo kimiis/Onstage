@@ -1,0 +1,20 @@
+<div class="show-content">
+  <div class="show-content-header">
+
+    <div class="show-content-header-img">
+      <%# # cl_image_tag @artist.cover_img.url(:medium) %>
+    </div>
+
+    <div class="show-content-photo-profil">
+      <%# # cl_image_tag @artist.profile_img.url(:medium)  %>
+    </div>
+
+    <div class="show-content-header-info">
+      <h1><%=@artist.name%></h1>
+      <%# <p>add rating</p> %>
+    </div>
+
+  </div>
+<%= link_to 'Edit', edit_artist_path(@artist) %> |
+<%= link_to 'Back', artists_path %>
+  </div>
