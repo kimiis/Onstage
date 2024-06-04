@@ -8,6 +8,7 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 puts 'destroy data'
+Booking.destroy_all
 Artist.destroy_all
 Stage.destroy_all
 User.destroy_all
@@ -46,5 +47,7 @@ puts "created #{Stage.count} stages"
 
 # seed booking
 puts "create bookings"
-booking_1 = Booking.create!({ status: 'confirmed', artist: artist_john, stage: stage_tony, date_start: Time.now, date_end: Time.now })
+booking_1 = Booking.create!({ status: 'confirmed', artist: artist_john, stage: stage_isa, date_start: Time.now, date_end: Time.now, rating_value: 3 })
+booking_2 = Booking.create!({ status: 'confirmed', artist: artist_eric, stage: stage_erika, date_start: Time.now, date_end: Time.now, rating_value: 4 })
+booking_3 = Booking.create!({ status: 'confirmed', artist: artist_sarah, stage: stage_isa, date_start: Time.now, date_end: Time.now, rating_value: 5 })
 puts "created #{Booking.count} bookings"
