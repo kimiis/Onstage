@@ -13,5 +13,4 @@ class User < ApplicationRecord
   def artist?
     artists.exists?
   end
-
 end

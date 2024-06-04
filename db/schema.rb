@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_04_125926) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_04_152428) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -48,7 +48,16 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_04_125926) do
     t.date "date_end"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_ads_on_user_id"
+  end
+
+  create_table "artist_ads", force: :cascade do |t|
+    t.string "content"
+    t.bigint "artist_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["artist_id"], name: "index_artist_ads_on_artist_id"
   end
 
   create_table "artists", force: :cascade do |t|
@@ -96,6 +105,14 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_04_125926) do
     t.index ["sender_id"], name: "index_messages_on_sender_id"
   end
 
+  create_table "stage_ads", force: :cascade do |t|
+    t.string "content"
+    t.bigint "stage_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["stage_id"], name: "index_stage_ads_on_stage_id"
+  end
+
   create_table "stages", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "name"
@@ -123,11 +140,14 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_04_125926) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "ads", "users"
+  add_foreign_key "artist_ads", "artists"
   add_foreign_key "artists", "users"
   add_foreign_key "bookings", "artists"
   add_foreign_key "bookings", "stages"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users", column: "receiver_id"
   add_foreign_key "messages", "users", column: "sender_id"
+  add_foreign_key "stage_ads", "stages"
   add_foreign_key "stages", "users"
 end

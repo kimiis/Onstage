@@ -8,6 +8,9 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 puts 'destroy data'
+ArtistAd.destroy_all
+StageAd.destroy_all
+Booking.destroy_all
 Artist.destroy_all
 Stage.destroy_all
 User.destroy_all
@@ -46,5 +49,14 @@ puts "created #{Stage.count} stages"
 
 # seed booking
 puts "create bookings"
-booking_1 = Booking.create!({ status: 'confirmed', artist: artist_john, stage: stage_tony, date_start: Time.now, date_end: Time.now })
+booking_1 = Booking.create!({ status: 'confirmed', artist: artist_john, stage: stage_isa, date_start: Time.now, date_end: Time.now, rating_value: 3 })
+booking_2 = Booking.create!({ status: 'confirmed', artist: artist_eric, stage: stage_erika, date_start: Time.now, date_end: Time.now, rating_value: 4 })
+booking_3 = Booking.create!({ status: 'confirmed', artist: artist_sarah, stage: stage_isa, date_start: Time.now, date_end: Time.now, rating_value: 5 })
 puts "created #{Booking.count} bookings"
+
+# seed ads
+puts "create ads"
+ads_1 = ArtistAd.create!({ content: "Annonce 1", artist: artist_john })
+ads_2 = StageAd.create!({ content: "Annonce 2", stage: stage_erika })
+ads_3 = ArtistAd.create!({ content: "Annonce 3", artist: artist_sarah })
+puts "created #{ArtistAd.count} & #{StageAd.count} ads"
