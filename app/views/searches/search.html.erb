@@ -1,1 +1,43 @@
-dfd
+<!-- app/views/searches/search.html.erb -->
+<div class="search-container">
+  <h1>Search Results for "<%= @query %>"</h1>
+
+  <% if @artists.present? %>
+    <h2>Artists</h2>
+    <ul>
+      <% @artists.each do |artist| %>
+        <li><%= link_to artist.name, artist_path(artist) %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <% if @stages.present? %>
+    <h2>Stages</h2>
+    <ul>
+      <% @stages.each do |stage| %>
+        <li><%= link_to stage.name, stage_path(stage) %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <% if @artist_ads.present?  %>
+    <h2>Ads</h2>
+    <ul>
+      <% @artist_ads.each do |ad| %>
+        <li><%= link_to ad.content.truncate(30), ad_path(ad) %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <% if @stage_ads.present? %>
+    <h2>Ads</h2>
+    <ul>
+      <% @stage_ads.each do |ad| %>
+        <li><%= link_to ad.content.truncate(30), ad_path(ad) %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <% if @artists.empty? && @stages.empty? && @stage_ads.empty? && @artist_ads.empty? %>
+    <p>No results found</p>
+  <% end %>
+</div>
