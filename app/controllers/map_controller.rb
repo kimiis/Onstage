@@ -6,7 +6,7 @@ class MapController < ApplicationController
       {
         lat: stage.latitude,
         lng: stage.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: {map: map}),
+        info_window_html: render_to_string(partial: "info_window", locals: { stage: stage }),
         marker_html: render_to_string(partial: "marker")
       }
     end
