@@ -19,6 +19,12 @@ Rails.application.routes.draw do
     #   post 'rate'
     # end
   resources :stages, only: [:index, :show] do
+    member do
+      get :news
+      get :photos
+      get :plannings
+      get :aboutUs
+    end
     resources :bookings, only: [:create]
   end
 

@@ -6,10 +6,11 @@ class ArtistsController < ApplicationController
 
   def show
     @bookings = @artist.bookings
+    @user = current_user
   end
 
   def news
-    @ads = Ad.all
+    @artist_ads = ArtistAd.all
     respond_to do |format|
       format.html { render partial: 'artists/news' }
       format.js { render partial: 'artists/news', locals: { artist: @artist } }
@@ -32,6 +33,7 @@ class ArtistsController < ApplicationController
   end
 
   def aboutUs
+    @user = current_user
     respond_to do |format|
       format.html { render partial: 'artists/aboutUs' }
       format.js { render partial: 'artists/aboutUs', locals: { artist: @artist } }

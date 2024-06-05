@@ -81,12 +81,12 @@ puts "created #{Booking.count} bookings"
 # seed ads
 puts "create ads"
 ads_1 = ArtistAd.new({ content: "Annonce 1", artist: artist_john })
-ads_1.photos.attach(io: URI.open(photo_artist), filename: "dubinc.jpg", content_type: "image/jpg")
+ads_1.photo.attach(io: URI.open(photo_artist), filename: "dubinc.jpg", content_type: "image/jpg")
 ads_1.save
 ads_2 = StageAd.create!({ content: "Annonce 2", stage: stage_erika })
-ads_2.photos.attach(io: URI.open(photo_stage), filename: "dubinc.jpg", content_type: "image/jpg")
+ads_2.photo.attach(io: URI.open(photo_stage), filename: "dubinc.jpg", content_type: "image/jpg")
 ads_2.save
 ads_3 = ArtistAd.create!({ content: "Annonce 3", artist: artist_sarah })
-ads_3.photos.attach(io: URI.open(photo_artist), filename: "dubinc.jpg", content_type: "image/jpg")
+ads_3.photo.attach(io: URI.open(photo_artist), filename: "dubinc.jpg", content_type: "image/jpg")
 ads_3.save
 puts "created #{ArtistAd.count} & #{StageAd.count} ads"
