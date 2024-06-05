@@ -9,7 +9,7 @@ class ArtistsController < ApplicationController
   end
 
   def news
-    @ads = Ad.all
+    @artist_ads = ArtistAd.all
     respond_to do |format|
       format.html { render partial: 'artists/news' }
       format.js { render partial: 'artists/news', locals: { artist: @artist } }
