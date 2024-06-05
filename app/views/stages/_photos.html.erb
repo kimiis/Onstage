@@ -1,0 +1,10 @@
+PHOTO PARTIAL
+<div class="content" data-tabs-target="content">
+
+  <div class="card">
+    <% @stage.photos.each_with_index do |photo, index| %>
+      <%= cl_image_tag(image.key, class: "photos-profil") unless index.zero? %>
+    <% end %>
+  </div>
+
+</div>
