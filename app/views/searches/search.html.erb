@@ -24,7 +24,7 @@
     <h2>Ads</h2>
     <ul>
       <% @artist_ads.each do |ad| %>
-        <li><%= link_to ad.content.truncate(30), ad_path(ad) %></li>
+        <li><%= link_to 'Artists ads',  artist_ads_path(@artist), data: { action: 'click->tabs#load', tabs_target: 'link' } %></li>
       <% end %>
     </ul>
   <% end %>
@@ -33,11 +33,15 @@
     <h2>Ads</h2>
     <ul>
       <% @stage_ads.each do |ad| %>
-        <li><%= link_to ad.content.truncate(30), ad_path(ad) %></li>
+       <li><%= link_to 'Stages ads',  stage_ads_path(@stage), data: { action: 'click->tabs#load', tabs_target: 'link' } %></li>
       <% end %>
     </ul>
   <% end %>
+
   <% if @artists.empty? && @stages.empty? && @stage_ads.empty? && @artist_ads.empty? %>
     <p>No results found</p>
   <% end %>
 </div>
+
+
+
