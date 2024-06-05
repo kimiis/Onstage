@@ -5,3 +5,7 @@
     <li><%= message.content %></li>
   <% end %>
 </ul>
+<%= simple_form_for [@conversation, @message] do |f| %>
+  <%= f.input(:content) %>
+  <%= f.submit(turbo_method: "post") %>
+<% end %>
