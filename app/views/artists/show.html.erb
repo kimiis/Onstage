@@ -20,12 +20,12 @@
 
     <div data-controller="tabs">
       <div class="navigation" >
-      <ul>
-      <li><%= link_to 'News', news_artist_path(@artist), data: { action: 'click->tabs#load', tabs_target: 'link' } %></li>
-      <li><%= link_to 'Photos', photos_artist_path(@artist), data: { action: 'click->tabs#load', tabs_target: 'link' } %></li>
-      <li><%= link_to 'Planning', plannings_artist_path(@artist), data: { action: 'click->tabs#load', tabs_target: 'link' } %></li>
-      <li><%= link_to 'About us', aboutUs_artist_path(@artist), data: { action: 'click->tabs#load', tabs_target: 'link' } %></li>
-      </ul>
+        <ul>
+          <li><%= link_to 'News', news_artist_path(@artist), data: { action: 'click->tabs#load', tabs_target: 'link' } %></li>
+          <li><%= link_to 'Photos', photos_artist_path(@artist), data: { action: 'click->tabs#load', tabs_target: 'link' } %></li>
+          <li><%= link_to 'Planning', plannings_artist_path(@artist), data: { action: 'click->tabs#load', tabs_target: 'link' } %></li>
+          <li><%= link_to 'About us', aboutUs_artist_path(@artist), data: { action: 'click->tabs#load', tabs_target: 'link' } %></li>
+        </ul>
       </div>
 
       <div class="content" data-tabs-target="content"></div>

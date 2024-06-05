@@ -34,19 +34,19 @@ puts "created #{User.count} users"
 photo_artist = "https://www.loire.fr/upload/docs/image/jpeg/2022-04/th-940x1000-dub-inc.jpg.jpg.associated/th-1920x1000-th-940x1000-dub-inc.jpg.jpg.jpg"
 # seed artist
 puts "create artist"
-artist_john = Artist.new({ user: john, bio: "Bio of Artist 1", name: "Artist 1", address: "123 Main St, City 1", phone_number: "123-456-7890"})
+artist_john = Artist.new({ user: john, bio: "Bio of Artist 1", name: "Artist 1", address: "rue de la république, rennes", phone_number: "123-456-7890"})
 artist_john.photos.attach(io: URI.open(photo_artist), filename: "dubinc.jpg", content_type: "image/jpg")
 artist_john.save
-artist_eric = Artist.new({ user: eric, bio: "Bio of Artist 2", name: "Artist 2", address: "124 Main St, City 1", phone_number: "123-456-7891"})
+artist_eric = Artist.new({ user: eric, bio: "Bio of Artist 2", name: "Artist 2", address: "rue de la république, nantes", phone_number: "123-456-7891"})
 artist_eric.photos.attach(io: URI.open(photo_artist), filename: "dubinc.jpg", content_type: "image/jpg")
 artist_eric.save
-artist_sarah = Artist.new({ user: sarah, bio: "Bio of Artist 3", name: "Artist 3", address: "125 Main St, City 1", phone_number: "123-456-7892"})
+artist_sarah = Artist.new({ user: sarah, bio: "Bio of Artist 3", name: "Artist 3", address: "rue de vern, rennes", phone_number: "123-456-7892"})
 artist_sarah.photos.attach(io: URI.open(photo_artist), filename: "dubinc.jpg", content_type: "image/jpg")
 artist_sarah.save
-artist_marc = Artist.new({ user: marc, bio: "Bio of Artist 4", name: "Artist 4", address: "126 Main St, City 1", phone_number: "123-456-7893"})
+artist_marc = Artist.new({ user: marc, bio: "Bio of Artist 4", name: "Artist 4", address: "rue de rennes, nantes", phone_number: "123-456-7893"})
 artist_marc.photos.attach(io: URI.open(photo_artist), filename: "dubinc.jpg", content_type: "image/jpg")
 artist_marc.save
-artist_nina = Artist.new({ user: nina, bio: "Bio of Artist 5", name: "Artist 5", address: "127 Main St, City 1", phone_number: "123-456-7894"})
+artist_nina = Artist.new({ user: nina, bio: "Bio of Artist 5", name: "Artist 5", address: "rue de paris, nantes", phone_number: "123-456-7894"})
 artist_nina.photos.attach(io: URI.open(photo_artist), filename: "dubinc.jpg", content_type: "image/jpg")
 artist_nina.save
 puts "created #{Artist.count} artists"
@@ -54,19 +54,19 @@ puts "created #{Artist.count} artists"
 photo_stage = "https://media.istockphoto.com/id/1358034815/fr/photo/conception-de-sc%C3%A8ne-vide-pour-la-maquette-et-lidentit%C3%A9-dentreprise-%C3%A9l%C3%A9ments-display.jpg?s=612x612&w=0&k=20&c=Xqg4xKgveuf36Onmv3pYErkWuls6KRky87xEeGDxv9M="
 # seed stage
 puts "create stage"
-stage_tony = Stage.new({ user: tony, name: "Stage 1", description: "Description stage 1", address: "14 Rue de la Fictive, 44000 Nantes", phone_number: "123-456-7890" })
+stage_tony = Stage.new({ user: tony, name: "Stage 1", description: "Description stage 1", address: "14 Rue de la potonnerie, 44000 Nantes", phone_number: "123-456-7890" })
 stage_tony.photos.attach(io: URI.open(photo_stage), filename: "dubinc.jpg", content_type: "image/jpg")
 stage_tony.save
-stage_erika = Stage.new({ user: erika, name: "Stage 2", description: "Description stage 2", address: "22 Avenue de l’Imaginaire, 44100 Nantes", phone_number: "123-456-7890" })
+stage_erika = Stage.new({ user: erika, name: "Stage 2", description: "Description stage 2", address: "22 boulevard michelet, 44100 Nantes", phone_number: "123-456-7890" })
 stage_erika.photos.attach(io: URI.open(photo_stage), filename: "dubinc.jpg", content_type: "image/jpg")
 stage_erika.save
-stage_tom = Stage.new({ user: tom, name: "Stage 3", description: "Description stage 3", address: "3 Boulevard des Créateurs, 44200 Nantes", phone_number: "123-456-7890" })
+stage_tom = Stage.new({ user: tom, name: "Stage 3", description: "Description stage 3", address: "1 rue jacquelin, 44200 Nantes", phone_number: "123-456-7890" })
 stage_tom.photos.attach(io: URI.open(photo_stage), filename: "dubinc.jpg", content_type: "image/jpg")
 stage_tom.save
-stage_isa = Stage.new({ user: isa, name: "Stage 4", description: "Description stage 4", address: "7 Place du Virtuel, 44300 Nantes", phone_number: "123-456-7890" })
+stage_isa = Stage.new({ user: isa, name: "Stage 4", description: "Description stage 4", address: "7 avenue de Chaville, 44300 Nantes", phone_number: "123-456-7890" })
 stage_isa.photos.attach(io: URI.open(photo_stage), filename: "dubinc.jpg", content_type: "image/jpg")
 stage_isa.save
-stage_kelly = Stage.new({ user: kelly, name: "Stage 5", description: "Description stage 5", address: "11 Allée des Innovateurs, 44400 Nantes", phone_number: "123-456-7890" })
+stage_kelly = Stage.new({ user: kelly, name: "Stage 5", description: "Description stage 5", address: "1 rue du stade, 44400 Nantes", phone_number: "123-456-7890" })
 stage_kelly.photos.attach(io: URI.open(photo_stage), filename: "dubinc.jpg", content_type: "image/jpg")
 stage_kelly.save
 puts "created #{Stage.count} stages"
