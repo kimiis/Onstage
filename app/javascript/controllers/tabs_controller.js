@@ -7,6 +7,7 @@ export default class extends Controller {
   async load(event) {
     event.preventDefault()
     const url = event.currentTarget.getAttribute("href")
+    // console.log(url);
     this.contentTarget.innerHTML = ""
     try {
       const response = await fetch(url)

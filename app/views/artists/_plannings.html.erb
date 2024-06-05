@@ -1,4 +1,11 @@
 plannings
- <div class="content" data-tabs-target="content">
-  
- </div>
+<div class="content" data-tabs-target="content">
+  <%# <%= simple_form_for [@stage, @booking], url: stage_bookings_path(@stage) do |f| %> %>
+    <div >
+      <%# <%= f.input date_start:, label: "Begin at", html5: true, as: :date  %> %>
+      <%= @bookings.each do |booking| %>
+        <%= booking %>
+      <% end %>
+    </div>
+</div>
+<%# faire un calendrier pour choisir la date %>
