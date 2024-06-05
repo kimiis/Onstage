@@ -11,19 +11,14 @@ Rails.application.routes.draw do
       get :aboutUs
     end
   end
-  resources :ads, only: [:new, :create, :edit, :update, :destroy, :index] do
-    member do
-      get :artist_ads
-      get :stage_ads
-    end
-  end
+
   resources :bookings, only: [:index, :show, :update]
   # do
-    # member do
-    #   patch 'approve'
-    #   patch 'reject'
-    #   post 'rate'
-    # end
+  # member do
+  #   patch 'approve'
+  #   patch 'reject'
+  #   post 'rate'
+  # end
   resources :stages, only: [:index, :show] do
        member do
       get :news
@@ -38,6 +33,8 @@ Rails.application.routes.draw do
     resources :messages, only: [:create]
   end
 
+get "/artist_ads", to: "ads#artist_ads"
+get "/stage_ads", to: "ads#stage_ads"
 get '/dashboard', to: 'dashboard#dashboard'
 get '/search', to: 'searches#search'
 # get '/search_artists', to: 'artists#search'

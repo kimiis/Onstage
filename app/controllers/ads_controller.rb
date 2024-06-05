@@ -1,10 +1,6 @@
 class AdsController < ApplicationController
   before_action :set_ad, only: [:show, :edit, :destroy, :update]
 
-  def index
-
-  end
-
   def artist_ads
     @artist_ads = ArtistAd.all
     respond_to do |format|

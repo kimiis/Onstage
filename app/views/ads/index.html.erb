@@ -1,8 +1,9 @@
+
  <div data-controller="tabs">
       <div class="navigation" >
         <ul>
-          <li><%= link_to 'Artists ads', artist_ads_ad_path(@artist), data: { action: 'click->tabs#load', tabs_target: 'link' } %></li>
-          <li><%= link_to 'Stages ads',  stage_ads_ad_path(@stage), data: { action: 'click->tabs#load', tabs_target: 'link' } %></li>
+          <li><%= link_to 'Artists ads',  artist_ads_path(@artist), data: { action: 'click->tabs#load', tabs_target: 'link' } %></li>
+          <li><%= link_to 'Stages ads',  stage_ads_path(@stage), data: { action: 'click->tabs#load', tabs_target: 'link' } %></li>
         </ul>
       </div>
 
