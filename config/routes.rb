@@ -12,7 +12,12 @@ Rails.application.routes.draw do
       get :aboutUs
     end
   end
-  resources :ads, only: [:new, :create, :edit, :update, :destroy]
+  resources :ads, only: [:new, :create, :edit, :update, :destroy, :index] do
+    member do
+      get :artist_ads
+      get :stage_ads
+    end
+  end
   resources :bookings, only: [:index, :show, :update]
   # do
     # member do
@@ -21,7 +26,7 @@ Rails.application.routes.draw do
     #   post 'rate'
     # end
   resources :stages, only: [:index, :show] do
-    member do
+       member do
       get :news
       get :photos
       get :plannings
