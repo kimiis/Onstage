@@ -1,2 +1,14 @@
 <h1>Artist#edit</h1>
-<p>Find me in app/views/artist/edit.html.erb</p>
+
+<%= simple_form_for(@artist) do |f| %>
+  <%= f.input(:name) %>
+  <%= f.input(:address) %>
+  <%= f.input(:bio) %>
+  <%= f.input :images, as: :file, input_html: { multiple: true } %>
+
+  <%= f.submit %>
+<% end %>
+
+<%= link_to 'Delete', artist_path(@artist), data: { turbo_method: :delete, confirm: 'Are you sure?' } %>
+
+<%= link_to 'Back', artists_path %>
