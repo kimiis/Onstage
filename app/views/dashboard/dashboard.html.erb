@@ -7,7 +7,7 @@
     <% @last_ads.each do |ad|  %>
       <li>
         <div>
-          <%# <%= ad.user %> 
+          <%# <%= ad.user %>
           <%= ad.content %>
           <%= ad.created_at %>
         </div>
@@ -23,7 +23,8 @@
     <% @best_stages.each do |stage|  %>
       <li>
         <div>
-          <%= stage.user %>
+          <%= cl_image_tag stage.photos.first.key %>
+          <%= stage.name %>
           <%= stage.description %>
           <%= stage.created_at %>
         </div>
