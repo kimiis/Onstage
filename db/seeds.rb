@@ -15,6 +15,8 @@ StageAd.destroy_all
 Booking.destroy_all
 Artist.destroy_all
 Stage.destroy_all
+Message.destroy_all
+Conversation.destroy_all
 User.destroy_all
 
 # seed user
