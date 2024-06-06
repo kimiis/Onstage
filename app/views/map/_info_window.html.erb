@@ -1,6 +1,6 @@
 <%# Infos des markers sur la map %>
 <div>
-  <h2><%= stage.name %></h2>
+  <h2><%= link_to stage.name, stage_path(stage.id) %></h2>
   <p><%= stage.address %></p>
   <%= cl_image_tag stage.photos.first.key %>
 </div>

@@ -33,7 +33,9 @@
             <li><%= link_to '+', new_stage_ad_ads_path %> </li>
           <% end %>
 
-          <li><%= link_to 'Planning', artist_path(@artist) %></li>
+          <% if current_user&.artist? %>
+            <li><%= link_to 'Planning', artist_path(@artist) %></li>
+          <% end %>
           <li><%= link_to 'Messages', conversations_path %></li>
         </ul>
       </div>
