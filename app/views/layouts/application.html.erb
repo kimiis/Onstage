@@ -13,32 +13,8 @@
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   </head>
-
   <body>
-    <nav class="menu">
-      <%= link_to root_path do %>
-        <%= image_tag "allstage_360.png", class: "logo-nav" %>
-      <% end %>
-      <div class="menu-icon">
-        <input type="checkbox"/>
-        <span></span>
-        <span></span>
-        <span></span>
-        <ul id="menu-links" class="menu-links">
-          <li><%= link_to 'MAP', map_path %> </li>
-
-          <% if current_user&.artist? %>
-            <li><%= link_to '+',  new_artist_ad_ads_path %> </li>
-          <% else %>
-            <li><%= link_to '+', new_stage_ad_ads_path %> </li>
-          <% end %>
-
-          <li><%= link_to 'Planning', artist_path(@artist) %></li>
-          <li><%= link_to 'Messages', conversations_path %></li>
-        </ul>
-      </div>
-    </nav>
-
     <%= yield %>
+    <%= request.path %>
   </body>
 </html>
