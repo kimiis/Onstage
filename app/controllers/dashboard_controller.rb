@@ -4,6 +4,12 @@ class DashboardController < ApplicationController
     @best_stages = Booking.best_stages
     @last_ads = Booking.last_ads
     # raise
+    @artist = Artist.find_by(user: current_user)
+    @artist_id = @artist.id
+
+    # @stage = Stage.find_by(user: current_user)
+    # @stage_id = @stage.id
+
     @query = params[:query]
     @artists = Artist.where('name ILIKE ?', "%#{@query}%") || []
     @stages = Stage.where('name ILIKE ?', "%#{@query}%") || []
