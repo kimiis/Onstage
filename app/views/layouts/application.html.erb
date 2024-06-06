@@ -15,6 +15,8 @@
   </head>
   <body>
     <%= yield %>
+    <%= render("/shared/nav", current_path: request.path) if ["/dashboard", "/map", "/bookings", "/conversations"].include?(request.path) %>
     <%= request.path %>
+    <%= request.referer %>
   </body>
 </html>

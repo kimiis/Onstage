@@ -1,6 +1,6 @@
 <nav>
       <div class="nav-container">
-        <div class="nav-link">
+        <div class="<%= current_path == "/dashboard" ? "nav-link active" : "nav-link" %>">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
             <defs>
               <linearGradient id="linear-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -13,7 +13,7 @@
           <p>Dashboard</p>
           <%= link_to("", dashboard_path) %>
         </div>
-        <div class="nav-link">
+        <div class="<%= current_path == "/map" ? "nav-link active" : "nav-link" %>">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
             <defs>
               <linearGradient id="linear-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -30,7 +30,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
         <% end %>
         <div class="separator"></div>
-        <div class="nav-link active">
+        <div class="<%= current_path == "/bookings" ? "nav-link active" : "nav-link" %>">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
             <defs>
               <linearGradient id="linear-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -43,7 +43,7 @@
           <p>Reservations</p>
           <%= link_to("", bookings_path) %>
         </div>
-        <div class="nav-link">
+        <div class="<%= current_path == "/conversations" ? "nav-link active" : "nav-link" %>">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
             <defs>
               <linearGradient id="linear-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
