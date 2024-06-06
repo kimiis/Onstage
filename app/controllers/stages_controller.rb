@@ -3,7 +3,7 @@ class StagesController < ApplicationController
  before_action :set_stage, only: [:show, :news, :photos, :plannings, :aboutUs, :edit, :destroy, :update]
 
   def index
-    @stages = Stage.all
+    @stages = Stage.includes(:bookings)
   end
 
   def show

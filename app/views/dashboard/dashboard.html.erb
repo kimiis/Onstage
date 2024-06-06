@@ -4,9 +4,11 @@
   <%= form.text_field :query, placeholder: 'Search...' %>
   <%= form.submit 'Search' %>
 <% end %>
+ <%= link_to 'Search', search_path, data: { action: 'click->tabs#load', tabs_target: 'link' } %>
 <%# To see the lastest ad of stages %>
 <div>
   <h1>Dernières annonces</h1>
+  <%= link_to 'See more', ads_path(@stage), data: { action: 'click->tabs#load', tabs_target: 'link' } %>
   <ul>
     <% @last_ads.each do |ad|  %>
       <li>

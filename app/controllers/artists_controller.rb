@@ -1,7 +1,7 @@
 class ArtistsController < ApplicationController
  before_action :set_artist, only: [:show, :news, :photos, :plannings, :aboutUs, :edit, :destroy, :update]
   def index
-    @artists = Artist.all
+    @artists = Artist.includes(:bookings)
   end
 
   def show
