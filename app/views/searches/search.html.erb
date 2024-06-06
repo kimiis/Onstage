@@ -1,4 +1,8 @@
-<!-- app/views/searches/search.html.erb -->
+<%= form_with url: search_path, method: :get, local: true do |form| %>
+  <%= form.text_field :query, placeholder: 'Search...' %>
+  <%= form.submit 'Search' %>
+<% end %>
+
 <div class="search-container">
   <h1>Search Results for "<%= @query %>"</h1>
 
@@ -42,6 +46,3 @@
     <p>No results found</p>
   <% end %>
 </div>
-
-
-

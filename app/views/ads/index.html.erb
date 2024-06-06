@@ -1,0 +1,11 @@
+<div class="tabs" data-controller="tabs">
+    <div class="navigation" >
+      <ul>
+        <li><%= link_to 'Stage ads',  artist_ads_ads_path(@ad), data: { action: 'click->tabs#load', tabs_target: 'link' } %></li>
+        <li><%= link_to 'Artist ads', stage_ads_ads_path(@ad), data: { action: 'click->tabs#load', tabs_target: 'link' } %></li>
+      </ul>
+    </div>
+
+    <div class="content" data-tabs-target="content"></div>
+
+  </div>

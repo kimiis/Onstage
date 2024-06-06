@@ -15,6 +15,10 @@ class User < ApplicationRecord
     artists.exists?
   end
 
+  def stage?
+    stages.exists?
+  end
+
   def all_conversations
     out = self.sent_messages.map { |m| m.conversation }.uniq << self.received_messages.map {|m| m.conversation}.uniq
     out.flatten.uniq

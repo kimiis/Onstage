@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   #   post 'rate'
   # end
   resources :stages, only: [:index, :show] do
-       member do
+    member do
       get :news
       get :photos
       get :plannings
@@ -33,14 +33,25 @@ Rails.application.routes.draw do
   resources :conversations, only: [:index, :show, :create] do
     resources :messages, only: [:create]
   end
+# resources :artist_ads
+# resources :stage_ads
 
-get "/artist_ads", to: "ads#artist_ads"
-get "/stage_ads", to: "ads#stage_ads"
+resources :ads, only: [:index, :show, :edit, :update, :destroy] do
+  collection do
+    get 'new_artist_ad', to: 'ads#new_artist_ad'
+    post 'create_artist_ad', to: 'ads#create_artist_ad'
+    get 'new_stage_ad', to: 'ads#new_stage_ad'
+    post 'create_stage_ad', to: 'ads#create_stage_ad'
+    get 'artist_ads', to: 'ads#artist_ads'
+    get 'stage_ads', to: 'ads#stage_ads'
+  end
+end
+
+# get "/ artist_ads", to: "ads#artist_ads"
+# get "/artist_ads/", to: "ads#artist_ads"
+# get "/stage_ads", to: "ads#stage_ads"
 get '/dashboard', to: 'dashboard#dashboard'
 get '/search', to: 'searches#search'
-# get '/search_artists', to: 'artists#search'
-# get '/search_stages', to: 'stages#search'
-# get '/search', to: 'ads#search'
 get '/map', to: 'map#show'
 
 
