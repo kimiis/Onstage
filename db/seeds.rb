@@ -15,6 +15,8 @@ StageAd.destroy_all
 Booking.destroy_all
 Artist.destroy_all
 Stage.destroy_all
+Message.destroy_all
+Conversation.destroy_all
 User.destroy_all
 
 # seed user
@@ -51,23 +53,22 @@ artist_nina.photos.attach(io: URI.open(photo_artist), filename: "dubinc.jpg", co
 artist_nina.save
 puts "created #{Artist.count} artists"
 
-photo_stage = "https://media.istockphoto.com/id/1358034815/fr/photo/conception-de-sc%C3%A8ne-vide-pour-la-maquette-et-lidentit%C3%A9-dentreprise-%C3%A9l%C3%A9ments-display.jpg?s=612x612&w=0&k=20&c=Xqg4xKgveuf36Onmv3pYErkWuls6KRky87xEeGDxv9M="
 # seed stage
 puts "create stage"
-stage_tony = Stage.new({ user: tony, name: "Stage 1", description: "Description stage 1", address: "14 Rue de la potonnerie, 44000 Nantes", phone_number: "123-456-7890" })
-stage_tony.photos.attach(io: URI.open(photo_stage), filename: "dubinc.jpg", content_type: "image/jpg")
+stage_tony = Stage.new({ user: tony, name: "Le Ferrailleur", description: "Le Ferrailleur, est depuis maintenant plus de 15 ans une référence de la scène rock/metal française. Lieu dédié à la découverte et à la diversité au travers d’une programmation éclectique", address: "21 Quai des Antilles, 44200 Nantes", phone_number: "123-456-7890" })
+stage_tony.photos.attach(io: URI.open("https://lh3.googleusercontent.com/p/AF1QipNjzNK79fI8-N_YfM1tFzPBKc9QdzUQ3xVPPvmT=s1360-w1360-h1020"), filename: "dubinc.jpg", content_type: "image/jpg")
 stage_tony.save
-stage_erika = Stage.new({ user: erika, name: "Stage 2", description: "Description stage 2", address: "22 boulevard michelet, 44100 Nantes", phone_number: "123-456-7890" })
-stage_erika.photos.attach(io: URI.open(photo_stage), filename: "dubinc.jpg", content_type: "image/jpg")
+stage_erika = Stage.new({ user: erika, name: "Le Nid", description: "Une scène au 32è étage !", address: "Tour Bretagne, Place de Bretagne, 44000 Nantes", phone_number: "123-456-7890" })
+stage_erika.photos.attach(io: URI.open("https://lh3.googleusercontent.com/p/AF1QipMOu6MvQ6lhoisER6S3I1B86AOwP2D_0zGvrfis=s1600-w640"), filename: "dubinc.jpg", content_type: "image/jpg")
 stage_erika.save
-stage_tom = Stage.new({ user: tom, name: "Stage 3", description: "Description stage 3", address: "1 rue jacquelin, 44200 Nantes", phone_number: "123-456-7890" })
-stage_tom.photos.attach(io: URI.open(photo_stage), filename: "dubinc.jpg", content_type: "image/jpg")
+stage_tom = Stage.new({ user: tom, name: "Le Chien Stupide", description: "Bar | Concerts | Dj Sets...", address: "4 Rue des Carmélites, Nantes, France 44000", phone_number: "123-456-7890" })
+stage_tom.photos.attach(io: URI.open("https://images.schlouk-map.com/cache/gallery/uploads/images/places/le-chien-stupide-62583db415e1f3.88508420.png"), filename: "dubinc.jpg", content_type: "image/jpg")
 stage_tom.save
-stage_isa = Stage.new({ user: isa, name: "Stage 4", description: "Description stage 4", address: "7 avenue de Chaville, 44300 Nantes", phone_number: "123-456-7890" })
-stage_isa.photos.attach(io: URI.open(photo_stage), filename: "dubinc.jpg", content_type: "image/jpg")
+stage_isa = Stage.new({ user: isa, name: "Le Chat Noir", description: "Concerts, soirées slam-poésie, théâtre d'impro ou jeux dans un bar animé doté d'une estrade et d'une terrasse.", address: "13 Allée Duquesne, 44000 Nantes", phone_number: "06 61 68 66 20" })
+stage_isa.photos.attach(io: URI.open("https://static.actu.fr/uploads/2023/02/bar-le-chat-noir-nantes.jpg"), filename: "dubinc.jpg", content_type: "image/jpg")
 stage_isa.save
-stage_kelly = Stage.new({ user: kelly, name: "Stage 5", description: "Description stage 5", address: "1 rue du stade, 44400 Nantes", phone_number: "123-456-7890" })
-stage_kelly.photos.attach(io: URI.open(photo_stage), filename: "dubinc.jpg", content_type: "image/jpg")
+stage_kelly = Stage.new({ user: kelly, name: "Le Live Bar", description: "Ce bar animé aux murs rouges, fresques colorées et sol en carrelage organise concerts et expositions.", address: "7 rue des Etats, 44000 Nantes", phone_number: "123-456-7890" })
+stage_kelly.photos.attach(io: URI.open("https://unfuretdanslaville.files.wordpress.com/2014/01/nantes-live-bar.jpg"), filename: "dubinc.jpg", content_type: "image/jpg")
 stage_kelly.save
 puts "created #{Stage.count} stages"
 
@@ -84,7 +85,7 @@ ads_1 = ArtistAd.new({ content: "Annonce 1", artist: artist_john })
 ads_1.photo.attach(io: URI.open(photo_artist), filename: "dubinc.jpg", content_type: "image/jpg")
 ads_1.save
 ads_2 = StageAd.create!({ content: "Annonce 2", stage: stage_erika })
-ads_2.photo.attach(io: URI.open(photo_stage), filename: "dubinc.jpg", content_type: "image/jpg")
+ads_2.photo.attach(io: URI.open("https://lh3.googleusercontent.com/p/AF1QipMOu6MvQ6lhoisER6S3I1B86AOwP2D_0zGvrfis=s1600-w640"), filename: "dubinc.jpg", content_type: "image/jpg")
 ads_2.save
 ads_3 = ArtistAd.create!({ content: "Annonce 3", artist: artist_sarah })
 ads_3.photo.attach(io: URI.open(photo_artist), filename: "dubinc.jpg", content_type: "image/jpg")
