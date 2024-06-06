@@ -32,14 +32,4 @@ export default class extends Controller {
       console.error("Error fetching content", error);
     }
   }
-
-  loadPlannings(event) {
-    console.log("coucou");
-    event.preventDefault();
-    // const planningTab = this.element.querySelector("a[data-target='plannings']");
-    // console.log(planningTab);
-    // if (planningTab) {
-    //   await this.loadContent(planningTab);
-    // }
-  }
 }

@@ -20,10 +20,6 @@
         <%= image_tag "allstage_360.png", class: "logo-nav" %>
       <% end %>
       <div class="menu-icon">
-        <input type="checkbox"/>
-        <span></span>
-        <span></span>
-        <span></span>
         <ul id="menu-links" class="menu-links">
           <li><%= link_to 'MAP', map_path %> </li>
 
@@ -33,10 +29,9 @@
             <li><%= link_to '+', new_stage_ad_ads_path %> </li>
           <% end %>
 
-         <li><%= link_to 'Planning', artist_path(@artist, tab: "plannings"), data: { action: 'click->tabs#checkAndLoadPlannings', tabs_target: 'link' } %></li>
+          <li><%= link_to 'BOOKINGS', bookings_path %></li>
+          <li><%= link_to 'MESSAGES', conversations_path %></li>
 
-
-          <li><%= link_to 'Messages', conversations_path %></li>
         </ul>
       </div>
     </nav>

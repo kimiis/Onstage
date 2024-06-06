@@ -1,0 +1,12 @@
+plannings
+<div class="content" data-tabs-target="content">
+    <div >
+      <%= @bookings.each do |booking| %>
+          <%= booking.artist_id %>
+        <%= booking.date_start %>
+         <%= booking.status %>
+
+      <% end %>
+    </div>
+</div>
+<%# faire un calendrier pour choisir la date %>
