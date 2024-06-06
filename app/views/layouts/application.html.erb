@@ -33,7 +33,9 @@
             <li><%= link_to '+', new_stage_ad_ads_path %> </li>
           <% end %>
 
-          <li><%= link_to 'Planning', artist_path(@artist) %></li>
+         <li><%= link_to 'Planning', artist_path(@artist, tab: "plannings"), data: { action: 'click->tabs#checkAndLoadPlannings', tabs_target: 'link' } %></li>
+
+
           <li><%= link_to 'Messages', conversations_path %></li>
         </ul>
       </div>
