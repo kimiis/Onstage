@@ -21,7 +21,7 @@
     <div class="tabs" data-controller="tabs">
       <div class="navigation" >
         <ul>
-          <li><%= link_to 'News', news_artist_path(@artist), data: { action: 'click->tabs#load', tabs_target: 'link' } %></li>
+          <li><%= link_to 'News', news_artist_path(@artist), id: 'news_tab', data: { action: 'click->tabs#load', tabs_target: 'link' } %></li>
           <li><%= link_to 'Photos', photos_artist_path(@artist), data: { action: 'click->tabs#load', tabs_target: 'link' } %></li>
           <li><%= link_to 'Planning', plannings_artist_path(@artist), data: { action: 'click->tabs#load', tabs_target: 'link' } %></li>
           <li><%= link_to 'About us', aboutUs_artist_path(@artist), data: { action: 'click->tabs#load', tabs_target: 'link' } %></li>
