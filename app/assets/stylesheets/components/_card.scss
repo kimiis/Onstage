@@ -35,6 +35,9 @@
   .card-body{
     p{
       width: 100%;
+      // text-overflow: ellipsis;
+      // white-space: normal;
+      // overflow: hidden;
     }
     .card-image{
       width: 100%;
