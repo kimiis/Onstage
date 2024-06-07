@@ -1,11 +1,26 @@
-.scroll-container {
+.dashboard-container {
+  padding-top: 70px;
+  .scroll-container {
   width: 100%;
   overflow-x: auto; /* Active le scroll horizontal */
   white-space: nowrap; /* Évite que les éléments passent à la ligne suivante */
-}
+  margin-bottom: 20px;
+  }
 
-.scroll-content {
-  display: flex;
-  gap: 20px;
-  padding: 10px;
+  .scroll-content {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+
+  section {
+    padding-bottom: 20px;
+  }
 }
