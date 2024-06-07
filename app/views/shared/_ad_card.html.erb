@@ -1,5 +1,6 @@
 <% ad = nil if local_assigns[:ad].nil? %>
 <% fill = false if local_assigns[:fill].nil? %>
+<% profile_path = dashboard_path if local_assigns[:profile_path].nil? %>
 
 <div class="<%= fill ? "m-card fill": "m-card"%>">
   <div class="card-header">
@@ -7,6 +8,7 @@
     <div class="card-header-text-content">
       <h3><%= ad ? (ad.class == ArtistAd ? ad.artist.name : ad.stage.name) : "La Petite Cuite" %></h3>
       <small>12h</small>
+      <%= link_to("", profile_path) %>
     </div>
   </div>
   <div class="card-body">
