@@ -33,11 +33,15 @@
     }
   }
   .card-body{
+    p{
+      width: 100%;
+    }
     .card-image{
       width: 100%;
       height: 150px;
       border-radius: 10px;
       background: gray;
+      object-fit: cover;
     }
   }
 }
