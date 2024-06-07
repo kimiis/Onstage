@@ -1,1 +1,21 @@
 // Specific CSS for your home-page
+.home{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  .logo-icon{
+    height: 60px;
+    width: 60px;
+    margin: 0 auto;
+  }
+  .greatting{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+}
