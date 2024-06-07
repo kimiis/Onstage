@@ -11,7 +11,7 @@
   </div>
   <div class="card-body">
     <% if artist_stage %>
-      <%= cl_image_tag(artist_stage.photos[0].key) %>
+      <%= cl_image_tag(artist_stage.photos[0].key, class:"card-image") %>
     <% else %>
       <div class="card-image"></div>
     <% end %>

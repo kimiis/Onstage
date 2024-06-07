@@ -12,7 +12,7 @@
   <div class="card-body">
     <p><%= ad ? ad.content : "Salut les artistes 🖖. Aujourd’hui nous souhaitons vous faire part d’un ..." %></p>
     <% if ad %>
-      <%= cl_image_tag(ad.photo.key) %>
+      <%= cl_image_tag(ad.photo.key, class:"card-image") %>
     <% else %>
       <div class="card-image"></div>
     <% end %>
