@@ -1,13 +1,20 @@
-<div class="m-card fill">
+<% ad = nil if local_assigns[:ad].nil? %>
+<% fill = false if local_assigns[:fill].nil? %>
+
+<div class="<%= fill ? "m-card fill": "m-card"%>">
   <div class="card-header">
     <div class="avatar"></div>
     <div class="card-header-text-content">
-      <h3>La Petite Cuite</h3>
+      <h3><%= ad ? (ad.class == ArtistAd ? ad.artist.name : ad.stage.name) : "La Petite Cuite" %></h3>
       <small>12h</small>
     </div>
   </div>
   <div class="card-body">
-    <p>Salut les artistes 🖖. Aujourd’hui nous souhaitons vous faire part d’un ...</p>
-    <div class="card-image"></div>
+    <p><%= ad ? ad.content : "Salut les artistes 🖖. Aujourd’hui nous souhaitons vous faire part d’un ..." %></p>
+    <% if ad %>
+      <%= cl_image_tag(ad.photo.key) %>
+    <% else %>
+      <div class="card-image"></div>
+    <% end %>
   </div>
 </div>
