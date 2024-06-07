@@ -1,5 +1,6 @@
 <% artist_stage = nil if local_assigns[:artist_stage].nil? %>
 <% fill = false if local_assigns[:fill].nil? %>
+<% profile_path = dashboard_path if local_assigns[:profile_path].nil? %>
 
 <div class="<%= fill ? "m-card fill": "m-card"%>">
   <div class="card-header">
@@ -7,6 +8,7 @@
     <div class="card-header-text-content">
       <h3><%= artist_stage ? artist_stage.name : "Dub Inc" %></h3>
       <small><i class="fa-solid fa-star"></i> 4,3</small>
+      <%= link_to("", profile_path) %>
     </div>
   </div>
   <div class="card-body">
