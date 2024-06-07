@@ -1,0 +1,11 @@
+.scroll-container {
+  width: 100%;
+  overflow-x: auto; /* Active le scroll horizontal */
+  white-space: nowrap; /* Évite que les éléments passent à la ligne suivante */
+}
+
+.scroll-content {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+}
