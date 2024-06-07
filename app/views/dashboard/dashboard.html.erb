@@ -9,12 +9,16 @@
 <%# To see the lastest ad of stages %>
 <div>
   <h1>Dernières annonces</h1>
-  <%= link_to 'See more', ads_path(@stage), data: { action: 'click->tabs#load', tabs_target: 'link' } %>
+  <%= link_to 'Voir plus', ads_path(@stage), data: { action: 'click->tabs#load', tabs_target: 'link' } %>
   <ul>
     <% @last_ads.each do |ad|  %>
       <li>
         <div>
-          <%# <%= ad.user %>
+        <% if ad.class == ArtistAd %>
+          <%= ad.artist.name %>
+        <% else %>
+            <%= ad.stage.name %>
+        <% end %>
           <%= ad.content %>
           <%= ad.created_at %>
         </div>
@@ -30,7 +34,7 @@
     <% @best_stages.each do |stage|  %>
       <li>
         <div>
-          <%# <%= cl_image_tag stage.photos.first.key %> %>
+          <%# <%= cl_image_tag stage.photos.first.key %> 
           <%= stage.name %>
           <%= stage.description %>
           <%= stage.created_at %>
