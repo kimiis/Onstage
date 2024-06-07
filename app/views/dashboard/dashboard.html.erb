@@ -1,11 +1,6 @@
-<%# <%= render_header %> %>
+
 <%= render('shared/header') %>
-<h1>Dashboard#dashboard</h1>
-<%= form_with url: search_path, method: :get, local: true do |form| %>
-  <%= form.text_field :query, placeholder: 'Search...' %>
-  <%= form.submit 'Search' %>
-<% end %>
- <%= link_to 'Search', search_path, data: { action: 'click->tabs#load', tabs_target: 'link' } %>
+
 <%# To see the lastest ad of stages %>
 <div>
   <h1>Dernières annonces</h1>
@@ -34,7 +29,7 @@
     <% @best_stages.each do |stage|  %>
       <li>
         <div>
-          <%# <%= cl_image_tag stage.photos.first.key %> 
+          <%# <%= cl_image_tag stage.photos.first.key %>
           <%= stage.name %>
           <%= stage.description %>
           <%= stage.created_at %>
