@@ -75,3 +75,20 @@ nav{
     }
   }
   }
+
+  .navigation{
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    a{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: black;
+      i{
+        font-size: 22px;
+      }
+    }
+  }

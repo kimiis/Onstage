@@ -1,8 +1,12 @@
+<%= render("shared/page_header", title: @artist.name) %>
+<div class="profile-container">
+
+</div>
 <div class="show-content">
   <div class="show-content-header">
 
     <div class="show-content-header-img">
-      <%# # cl_image_tag @artist.cover_img.url %>
+      <%# <%= cl_image_tag @artist.photos.first %> %>
     </div>
 
     <div class="show-content-photo-profil">
@@ -21,10 +25,21 @@
     <div class="tabs" data-controller="tabs">
       <div class="navigation" >
         <ul>
-          <li><%= link_to 'News', news_artist_path(@artist), id: 'news_tab', data: { action: 'click->tabs#load', tabs_target: 'link' } %></li>
-          <li><%= link_to 'Photos', photos_artist_path(@artist), data: { action: 'click->tabs#load', tabs_target: 'link' } %></li>
-          <li><%= link_to 'Planning', plannings_artist_path(@artist), data: { action: 'click->tabs#load', tabs_target: 'link' } %></li>
-          <li><%= link_to 'About us', aboutUs_artist_path(@artist), data: { action: 'click->tabs#load', tabs_target: 'link' } %></li>
+          <%= link_to news_artist_path(@artist), id: 'news_tab', data: { action: 'click->tabs#load', tabs_target: 'link' } do %>
+            <i class="fa-solid fa-newspaper"></i> Actualités
+          <% end %>
+          <%= link_to photos_artist_path(@artist), data: { action: 'click->tabs#load', tabs_target: 'link' } do %>
+            <i class="fa-solid fa-image"></i>
+            <p>Photos</p>
+          <% end %>
+          <%= link_to plannings_artist_path(@artist), data: { action: 'click->tabs#load', tabs_target: 'link' } do %>
+            <i class="fa-solid fa-calendar"></i>
+            <p>Planning</p>
+          <% end %>
+          <%= link_to aboutUs_artist_path(@artist), data: { action: 'click->tabs#load', tabs_target: 'link' } do %>
+            <i class="fa-solid fa-user"></i>
+            <p>A Propos</p>
+          <% end %>
         </ul>
       </div>
 
