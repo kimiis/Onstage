@@ -15,14 +15,8 @@
   <div class="scroll-container">
     <div class="scroll-content">
       <% @last_ads.each do |ad|  %>
-        <%= render "shared/ad_card" %>
-          <% if ad.class == ArtistAd %>
-            <%= ad.artist.name %>
-          <% else %>
-              <%= ad.stage.name %>
-          <% end %>
-            <%= ad.content %>
-            <%= ad.created_at %>
+        <%= render "shared/ad_card", ad: ad %>
+          
       <% end %>
     </div>
   </div>
