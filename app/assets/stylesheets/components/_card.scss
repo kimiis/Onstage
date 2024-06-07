@@ -33,6 +33,8 @@
     }
   }
   .card-body{
+    display: flex;
+    flex-direction: column;
     p{
       width: 100%;
     }
