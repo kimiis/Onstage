@@ -1,3 +1,10 @@
+<%# <%= render_header %> %>
+<%= render('shared/header') %>
+<h1>Dashboard#dashboard</h1>
+<%= form_with url: search_path, method: :get, local: true do |form| %>
+  <%= form.text_field :query, placeholder: 'Search...' %>
+  <%= form.submit 'Search' %>
+<% end %>
  <%= link_to 'Search', search_path, data: { action: 'click->tabs#load', tabs_target: 'link' } %>
 <%# To see the lastest ad of stages %>
 <div>
