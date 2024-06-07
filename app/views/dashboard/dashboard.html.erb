@@ -6,40 +6,42 @@
   <%= form.submit 'Search' %>
 <% end %>
  <%= link_to 'Search', search_path, data: { action: 'click->tabs#load', tabs_target: 'link' } %>
+
 <%# To see the lastest ad of stages %>
 <div>
   <h1>Dernières annonces</h1>
   <%= link_to 'Voir plus', ads_path(@stage), data: { action: 'click->tabs#load', tabs_target: 'link' } %>
-  <ul>
-    <% @last_ads.each do |ad|  %>
-      <li>
-        <div>
-        <% if ad.class == ArtistAd %>
-          <%= ad.artist.name %>
-        <% else %>
-            <%= ad.stage.name %>
-        <% end %>
-          <%= ad.content %>
-          <%= ad.created_at %>
-        </div>
-      </li>
+
+  <div class="scroll-container">
+    <div class="scroll-content">
+      <% @last_ads.each do |ad|  %>
+        <%= render "shared/ad_card" %>
+          <% if ad.class == ArtistAd %>
+            <%= ad.artist.name %>
+          <% else %>
+              <%= ad.stage.name %>
+          <% end %>
+            <%= ad.content %>
+            <%= ad.created_at %>
       <% end %>
-  </ul>
+    </div>
+  </div>
+
 </div>
 
 <%# To see bests stages nearest to me %>
 <div>
   <h1>Scènes les mieux notées</h1>
-  <ul>
-    <% @best_stages.each do |stage|  %>
-      <li>
-        <div>
-          <%# <%= cl_image_tag stage.photos.first.key %> 
-          <%= stage.name %>
-          <%= stage.description %>
-          <%= stage.created_at %>
-        </div>
-      </li>
+
+  <div class="scroll-container">
+    <div class="scroll-content">
+      <% @best_stages.each do |stage|  %>
+          <%= render "shared/ad_card" %>
+            <%# <%= cl_image_tag stage.photos.first.key %>
+            <%= stage.name %>
+            <%= stage.description %>
+            <%= stage.created_at %>
       <% end %>
-  </ul>
+      </div>
+  </div>
 </div>
