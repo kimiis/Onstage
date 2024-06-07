@@ -1,4 +1,9 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
-<%= link_to "Dashboard", dashboard_path %>
+<div class="home">
+  <%= image_tag("allstage_360.png", class: "logo-icon") %>
+  <div class="greatting">
+    <h1>Bienvenu sur</h1>
+    <%= image_tag("OnStage.png") %>
+  </div>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam exercitationem nobis quae itaque? Animi doloribus consequatur vitae? Maiores temporibus sit quibusdam dolorem aliquam fuga nisi optio quia? Voluptates, velit omnis!</p>
+  <%= link_to("Commencer l'aventure", dashboard_path, class:"btn primary") %>
+</div>
