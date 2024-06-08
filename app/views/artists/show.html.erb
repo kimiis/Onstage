@@ -1,54 +1,7 @@
 <%= render("shared/page_header", title: @artist.name) %>
 <div class="profile-container">
-
+  <div class="profile-header">
+    <div class="profile-cover"></div>
+    <div class="profile-navigation"></div>
+  </div>
 </div>
-<div class="show-content">
-  <div class="show-content-header">
-
-    <div class="show-content-header-img">
-      <%# <%= cl_image_tag @artist.photos.first %> %>
-    </div>
-
-    <div class="show-content-photo-profil">
-      <%# # cl_image_tag @artist.profile_img.url %>
-    </div>
-
-    <div class="show-content-header-info">
-      <h1><%=@artist.name%></h1>
-      <%# <p>add rating</p> %>
-    </div>
-
-    <div class="edit-profi">
-      <%= link_to 'Edit', edit_artist_path(@artist) %>
-    </div>
-
-    <div class="tabs" data-controller="tabs">
-      <div class="navigation" >
-        <ul>
-          <%= link_to news_artist_path(@artist), id: 'news_tab', data: { action: 'click->tabs#load', tabs_target: 'link' } do %>
-            <i class="fa-solid fa-newspaper"></i> Actualités
-          <% end %>
-          <%= link_to photos_artist_path(@artist), data: { action: 'click->tabs#load', tabs_target: 'link' } do %>
-            <i class="fa-solid fa-image"></i>
-            <p>Photos</p>
-          <% end %>
-          <%= link_to plannings_artist_path(@artist), data: { action: 'click->tabs#load', tabs_target: 'link' } do %>
-            <i class="fa-solid fa-calendar"></i>
-            <p>Planning</p>
-          <% end %>
-          <%= link_to aboutUs_artist_path(@artist), data: { action: 'click->tabs#load', tabs_target: 'link' } do %>
-            <i class="fa-solid fa-user"></i>
-            <p>A Propos</p>
-          <% end %>
-        </ul>
-      </div>
-
-      <div class="content" data-tabs-target="content"></div>
-
-    </div>
-
-
-  </div>
-
-<%= link_to 'Back', artists_path %>
-  </div>
