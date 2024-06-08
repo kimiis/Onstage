@@ -1,7 +1,2 @@
 <%= render("shared/page_header", title: @artist.name) %>
-<div class="profile-container">
-  <div class="profile-header">
-    <div class="profile-cover"></div>
-    <div class="profile-navigation"></div>
-  </div>
-</div>
+<%= render("shared/profile", artist_stage: @artist) %>
