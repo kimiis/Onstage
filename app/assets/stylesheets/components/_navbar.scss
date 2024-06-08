@@ -92,3 +92,37 @@ nav{
       }
     }
   }
+
+  .secondary-nav{
+    padding: 10px;
+    background: $white;
+    &-container{
+      position: relative;
+      max-width: 768px;
+      display: flex;
+      justify-content: space-between;
+      a{
+        color: $black;
+        text-decoration: none;
+        text-transform: uppercase;
+        position: relative;
+        &.active{
+          background: $main-theme;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-weight: bold;
+          &::before{
+            position: absolute;
+            width: 40px;
+            height: 6px;
+            border-radius: 2px;
+            background: $main-theme;
+            transform: translate(-50%, -50%);
+            top: calc(100% + 10px);
+            left: 50%;
+            transition: .5s top ease-in-out;
+          }
+        }
+      }
+    }
+  }

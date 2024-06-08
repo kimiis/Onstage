@@ -1,7 +1,6 @@
-<%# <%= render_header %> %>
 <%= render('shared/header') %>
-
-<div class="dashboard-container">
+<div class="dashboard">
+  <div class="dashboard-container">
   <%# To see the lastest ad of stages %>
     <div class="section-header">
       <h1>Dernières annonces</h1>
@@ -10,7 +9,7 @@
       <div class="scroll-container">
         <div class="scroll-content">
           <% @last_ads.each do |ad|  %>
-            <%= render("shared/ad_card", ad: ad, profile_path: ad.class == ArtistAd ? artist_path(ad.artist_id) : stage_path(ad.stage_id)) %>
+            <%= render("shared/ad_card", ad: ad, profile: ad.class == ArtistAd ? ad.artist : ad.stage) %>
           <% end %>
         </div>
       </div>
@@ -22,8 +21,9 @@
       <div class="scroll-container">
         <div class="scroll-content">
           <% @best_stages.each do |stage|  %>
-            <%= render("shared/artist_stage_card", artist_stage: stage, profile_path: stage_path(stage.id)) %>
+            <%= render("shared/artist_stage_card", artist_stage: stage, profile: stage) %>
           <% end %>
         </div>
     </div>
+</div>
 </div>
