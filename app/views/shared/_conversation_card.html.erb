@@ -1,5 +1,5 @@
 <% conversation = nil if local_assigns[:conversation].nil? %>
-<% user_interlocutor = conversation.messages.first.sender == current_user ? conversation.messages.first.receiver :  conversation.messages.first.receiver %>
+<% user_interlocutor = conversation.messages.first.sender == current_user ? conversation.messages.first.receiver :  conversation.messages.first.sender %>
 <% artist_stage_interlocutor = user_interlocutor.artist? ? user_interlocutor.artists[0] : user_interlocutor.stages[0] %>
 <div class="conversation-card">
   <div class="conversation-card-container">
