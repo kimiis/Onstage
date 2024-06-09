@@ -1,7 +1,7 @@
-<h1>Conversations#index</h1>
-<p>Find me in app/views/conversations/index.html.erb</p>
-<ul>
-  <% @conversations.each do |conversation| %>
-    <li><%= link_to(conversation.name, conversation_path(conversation)) %></li>
-  <% end %>
-</ul>
+<div class="conversations">
+  <div class="conversations-container">
+    <% @conversations.each do |conversation| %>
+      <%= render("shared/conversation_card", conversation: conversation) %>
+    <% end %>
+  </div>
+</div>

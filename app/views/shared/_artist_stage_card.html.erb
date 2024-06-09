@@ -1,6 +1,6 @@
 <% profile = nil if local_assigns[:profile].nil? %>
 <% fill = false if local_assigns[:fill].nil? %>
-<% profile = dashboard_path if local_assigns[:profile].nil? %>
+<% profile = nil if local_assigns[:profile].nil? %>
 
 <div class="<%= fill ? "m-card fill": "m-card"%>">
   <div class="card-header">

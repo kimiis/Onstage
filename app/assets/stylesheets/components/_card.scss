@@ -63,18 +63,44 @@
 .conversation-card{
   width: 100%;
   padding: 10px;
-  .conversation-container{
+  border-radius: 15px;
+  background: $white;
+  box-shadow: $middle-shadow;
+  position: relative;
+  .conversation-card-container{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
-    padding: 5px;
+    gap: 2px;
     .avatar{
+      width: 60px;
+      height: 60px;
+      border-radius: 5px;
       background: gray;
       object-fit: cover;
     }
     .conversation-card-details, .conversation-card-data{
+      max-width: 70%;
       display: flex;
       flex-direction: column;
+      h3{
+        width: fit-content;
+      }
+      p{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 0;
+      }
+    }
+  }
+  a{
+    &.card-link{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
     }
   }
 }

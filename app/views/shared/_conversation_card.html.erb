@@ -1,12 +1,20 @@
+<% conversation = nil if local_assigns[:conversation].nil? %>
+<% user_interlocutor = conversation.messages.first.sender == current_user ? conversation.messages.first.receiver :  conversation.messages.first.receiver %>
+<% artist_stage_interlocutor = user_interlocutor.artist? ? user_interlocutor.artists[0] : user_interlocutor.stages[0] %>
 <div class="conversation-card">
   <div class="conversation-card-container">
-    <div class="avatar"></div>
+    <% if conversation %>
+      <%= cl_image_tag(artist_stage_interlocutor.photos.first.key, class: "avatar") %>
+    <% else %>
+      <div class="avatar"></div>
+    <% end %>
     <div class="conversation-card-details">
-      <h3>La Petite Cuite</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      <h3><%= conversation ? artist_stage_interlocutor.name : "La Petite Cuite" %></h3>
+      <p><%= conversation ? conversation.messages.last.content: "Lorem ipsum dolor sit amet consectetur adipisicing elit." %></p>
     </div>
     <div class="conversation-card-data">
       <p>00:43</p>
     </div>
   </div>
+  <%= link_to("", conversation_path(conversation), class: "card-link") %>
 </div>
