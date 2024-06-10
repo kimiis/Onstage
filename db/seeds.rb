@@ -191,3 +191,20 @@ ads_6 = StageAd.create!({ content: "Petite scène mais grands fêtards, nous che
 ads_6.photo.attach(io: URI.open("https://unfuretdanslaville.files.wordpress.com/2014/01/nantes-live-bar.jpg"), filename: "dubinc.jpg", content_type: "image/jpg")
 ads_6.save
 puts "created #{ArtistAd.count} & #{StageAd.count} ads"
+
+# seed conversations
+puts "create conversations"
+conversation_1 = Conversation.create!(name: "conv-1")
+conversation_2 = Conversation.create!(name: "conv-2")
+conversation_3 = Conversation.create!(name: "conv-3")
+puts "created #{Conversation.count} conversations"
+
+# seed messages
+puts "create messages"
+message_1 = Message.create!(content: "Lorem ipsum dolor sit amet", sender: john, receiver: erika, conversation: conversation_1)
+message_2 = Message.create!(content: "consectetur adipiscing elit, sed do eiusmod tempor incididunt", sender: erika, receiver: john, conversation: conversation_1)
+message_3 = Message.create!(content: "Ut enim ad minim veniam, quis nostrud", sender: john, receiver: erika, conversation: conversation_1)
+message_4 = Message.create!(content: "exercitation ullamco laboris nisi ut aliquip ex ea", sender: john, receiver: eric, conversation: conversation_2)
+message_5 = Message.create!(content: "cillum dolore eu fugiat nulla pariatur.", sender: eric, receiver: john, conversation: conversation_2)
+message_6 = Message.create!(content: "qui dolorem ipsum quia dolor sit amet, consectetur", sender: nina, receiver: john, conversation: conversation_3)
+puts "created #{Message.count} messages"

@@ -9,9 +9,11 @@ class ConversationsController < ApplicationController
     @message = Message.new
     @message.conversation = @conversation
     @message.sender = current_user
-    @message.receiver = @conversation.messages.first.sender == current_user ?
-      @conversation.messages.first.receiver :
+    if @conversation.messages.first.sender == current_user
+      @conversation.messages.first.receiver
+    else
       @conversation.messages.first.sender
+    end
   end
 
   def create

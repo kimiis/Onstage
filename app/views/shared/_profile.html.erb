@@ -61,6 +61,15 @@
         <% end %>
       </div>
     <% end %>
+    <% if params[:p] == "photos"%>
+      <div class="profile-photo">
+        <% artist_stage.photos.each_with_index do |photo, index| %>
+          <% if index > 1 %>
+            <%= cl_image_tag(photo.key, class: "photo") %>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>
 </div>

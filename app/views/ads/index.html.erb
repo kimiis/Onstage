@@ -7,10 +7,10 @@
     </div>
     <div class="content" data-tabs-target="content">
       <% @stage_ads.each do |stage_ad| %>
-        <%= render("shared/ad_card", ad:stage_ad, fill: true ) %>
+        <%= render("shared/ad_card", ad:stage_ad, profile: stage_ad.stage, fill: true ) %>
       <% end %>
       <% @artist_ads.each do |artist_ad| %>
-        <%= render("shared/ad_card", ad:artist_ad, fill: true ) %>
+        <%= render("shared/ad_card", ad:artist_ad, profile: artist_ad.artist, fill: true ) %>
       <% end %>
 
     </div>
