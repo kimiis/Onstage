@@ -1,6 +1,6 @@
-<h1>Mes dates</h1>
+<h1>Mes réservations</h1>
 <div class="content">
-    <div >
+    <div class="m-card">
       <% @bookings.each do |booking|%>
         <% booking.stage.photos.each do |photo| %>
           <%= cl_image_tag(photo.key, class: "photos")  %>
