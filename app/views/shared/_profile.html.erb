@@ -71,5 +71,12 @@
       </div>
     <% end %>
   </div>
+  <% if params[:p] == "planning" %>
+    <div class="profile-planning">
+      <% @bookings.each do |booking| %>
+        <%= booking.stage.name %>
+      <% end %>
+    </div>
+  <% end %>
 </div>
 </div>
