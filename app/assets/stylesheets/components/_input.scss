@@ -5,9 +5,15 @@ label {
 input {
   &#file-upload-button {
     outline: 0;
-    background-color: red;
+    // background-color: red;
   }
 }
+
+.input-message {
+    height: 100%;
+    width: 100%;
+}
+
 #file-upload-button {
   outline: 0;
   background-color: red;
