@@ -22,15 +22,15 @@ before_action :set_booking, only: [:show]
     end
   end
 
-  # def edit
-  #   @booking = Booking.find(params[:id])
-  # end
+  def edit
+    @booking = Booking.find(params[:id])
+  end
 
-  # def update
-  #   @booking = Booking.find(params[:id])
-  #   @booking.update(booking_params)
-  #   redirect_to booking_path(@booking)
-  # end
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
+    redirect_to booking_path(@booking)
+  end
 
 
   # def cancel
