@@ -3,7 +3,7 @@ class Booking < ApplicationRecord
   belongs_to :stage
 
   def self.best_stages
-    @bookings = Stage.near("nantes", 10).map {|stage| stage.bookings}.flatten
+    @bookings = Stage.near("nantes", 20).map {|stage| stage.bookings}.flatten
     @bookings.sort_by(&:rating_value).reverse.first(6).map do |booking|
     booking.stage
     end

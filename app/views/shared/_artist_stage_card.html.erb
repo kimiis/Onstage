@@ -1,12 +1,25 @@
-<div class="m-card fill">
+<% profile = nil if local_assigns[:profile].nil? %>
+<% fill = false if local_assigns[:fill].nil? %>
+<% profile = nil if local_assigns[:profile].nil? %>
+
+<div class="<%= fill ? "m-card fill": "m-card"%>">
   <div class="card-header">
-    <div class="avatar"></div>
+    <% if profile %>
+      <%= cl_image_tag(profile.photos[0].key, class:"avatar") %>
+    <% else %>
+      <div class="avatar"></div>
+    <% end %>
     <div class="card-header-text-content">
-      <h3>Dub Inc</h3>
+      <h3><%= profile ? profile.name : "Dub Inc" %></h3>
       <small><i class="fa-solid fa-star"></i> 4,3</small>
+      <%= link_to("", profile.class == Artist ? artist_path(profile.id) : stage_path(profile.id)) %>
     </div>
   </div>
   <div class="card-body">
-    <div class="card-image"></div>
+    <% if profile %>
+      <%= cl_image_tag(profile.photos[0].key, class:"card-image") %>
+    <% else %>
+      <div class="card-image"></div>
+    <% end %>
   </div>
 </div>
