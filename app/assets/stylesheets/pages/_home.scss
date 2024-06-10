@@ -10,6 +10,9 @@
     justify-content: center;
     gap: 10px;
     padding: 20px;
+    p {
+      text-align: center;
+    }
     .logo-icon{
       height: 60px;
       width: 60px;
@@ -20,7 +23,6 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      text-align: center;
     }
   }
 }

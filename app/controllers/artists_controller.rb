@@ -1,5 +1,7 @@
 class ArtistsController < ApplicationController
- before_action :set_artist, only: [:show, :news, :photos, :plannings, :aboutUs, :edit, :destroy, :update]
+  before_action :set_artist, only: [:show, :news, :photos, :plannings, :aboutUs, :edit, :destroy, :update]
+  before_action :authenticate_user!, only: [:edit, :update]
+  before_action :authorize_user!, only: [:edit, :update]
   def index
     @artists = Artist.includes(:bookings)
   end
@@ -41,6 +43,7 @@ class ArtistsController < ApplicationController
   end
 
   def edit
+    # je ne peu editer que si je suis le current_user
   end
 
   def update

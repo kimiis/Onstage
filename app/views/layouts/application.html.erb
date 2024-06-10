@@ -14,7 +14,9 @@
       <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   </head>
   <body>
-    <%= yield %>
+
+      <%= yield %>
+
     <%= render("/shared/nav", current_path: request.path) if ["/dashboard", "/map", "/bookings", "/conversations"].include?(request.path) %>
   </body>
 </html>

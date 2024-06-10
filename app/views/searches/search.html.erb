@@ -28,7 +28,7 @@
     <h2>Ads</h2>
     <ul>
       <% @artist_ads.each do |ad| %>
-        <li><%= link_to 'Artists ads',  artist_ads_path(@artist), data: { action: 'click->tabs#load', tabs_target: 'link' } %></li>
+        <li><%= link_to 'Artists ads',  artist_ads_ads_path(@artist), data: { action: 'click->tabs#load', tabs_target: 'link' } %></li>
       <% end %>
     </ul>
   <% end %>
@@ -37,7 +37,9 @@
     <h2>Ads</h2>
     <ul>
       <% @stage_ads.each do |ad| %>
-        <li><%= link_to 'Stages ads',  stage_ads_path(@stage), data: { action: 'click->tabs#load', tabs_target: 'link' } %></li>
+
+        <li><%= link_to 'Stages ads',  stage_ads_ads_path(@stage), data: { action: 'click->tabs#load', tabs_target: 'link' } %></li>
+
       <% end %>
     </ul>
   <% end %>
