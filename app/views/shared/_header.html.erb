@@ -11,6 +11,7 @@
         <%= link_to( "", search_path) %>
       </div>
       <% if current_user %>
+      <%# mettre un link pour relier au profil user %>
         <%= cl_image_tag(current_user.artist? ? current_user.artists[0].photos[0].key : current_user.stages[0].photos[0].key, class: "avatar") %>
       <% else %>
         <%= link_to("Se connecter", new_user_session_path , class:"btn primary") %>
