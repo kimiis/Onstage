@@ -12,10 +12,21 @@
       </div>
       <% if current_user %>
       <%# mettre un link pour relier au profil user %>
-        <%= cl_image_tag(current_user.artist? ? current_user.artists[0].photos[0].key : current_user.stages[0].photos[0].key, class: "avatar") %>
+        <%= cl_image_tag(current_user.artist? ? current_user.artists[0].photos[0].key : current_user.stages[0].photos[0].key, class: "avatar", data: {menu_header_target: "avatar", action: "click->menu-header#toggleMenu"}) %>
       <% else %>
         <%= link_to("Se connecter", new_user_session_path , class:"btn primary") %>
       <% end %>
+    </div>
+    <div class="home-header-menu" data-menu-header-target="menu">
+      <div class="home-header-menu-container">
+        <%= link_to(current_user.artist? ? artist_path(current_user.artists[0]) : stage_path(current_user.stages[0]), class: 'profile-link') do %>
+        <i class="fa-solid fa-user"></i> Profil
+        <% end %>
+        <%= link_to(destroy_user_session_path, class: 'logout-link', data:{turbo_method: :delete}) do %>
+          <i class="fa-solid fa-right-from-bracket"></i> Se déconnecter
+        <% end %>
+        <%# <i class="fa-solid fa-x x-mark"></i> %>
+      </div>
     </div>
   </div>
 </header>
