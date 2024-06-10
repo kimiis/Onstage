@@ -1,16 +1,6 @@
 
 <%= form_with model: @ad, url: create_artist_ad_ads_path, local: true do |form| %>
-  <% if @ad.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@ad.errors.count, "error") %> prohibited this ad from being saved:</h2>
-      <ul>
-        <% @ad.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+ 
   <div class="field">
     <%= form.label :content %>
     <%= form.text_area :content %>

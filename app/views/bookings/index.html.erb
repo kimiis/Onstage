@@ -1,12 +1,15 @@
-plannings
-<div class="content" data-tabs-target="content">
-    <div >
-      <%= @bookings.each do |booking| %>
-          <%= booking.artist_id %>
+<h1>Mes réservations</h1>
+<div class="content">
+    <div class="m-card">
+      <% @bookings.each do |booking|%>
+        <% booking.stage.photos.each do |photo| %>
+          <%= cl_image_tag(photo.key, class: "photos")  %>
+        <% end %>
+        <%= booking.stage.name %>
         <%= booking.date_start %>
-         <%= booking.status %>
-
+        <%= booking.status %>
+        <hr>
       <% end %>
     </div>
 </div>
-<%# faire un calendrier pour choisir la date %>
+

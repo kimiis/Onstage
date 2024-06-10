@@ -34,7 +34,7 @@
             stage_path(artist_stage.id, p: "photos")) :
             "", class: params[:p] == "photos" ? "active" : "")
           %>
-          <%= link_to("PLANNNING",
+          <%= link_to("PLANNING",
             artist_stage ?
             (artist_stage.class == Artist ? artist_path(artist_stage.id, p: "planning") :
             stage_path(artist_stage.id, p: "planning")) :
