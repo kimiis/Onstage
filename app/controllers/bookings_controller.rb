@@ -1,9 +1,11 @@
 class BookingsController < ApplicationController
+
 before_action :set_booking, only: [:show, :edit, :update]
 
   def index
     @bookings = Booking.includes(:artist)
     @stage = Stage.includes(:bookings)
+
     @user = current_user
   end
 
