@@ -1,5 +1,10 @@
 <h1>Artist Ads</h1>
 
 <% @artist_ads.each do |artist_ad| %>
-  <%= render("shared/ad_card", ad:artist_ad, fill: true ) %>
+  <div class="artist-ad">
+    <p><%= artist_ad.content %></p>
+    <% if artist_ad.photo.attached? %>
+      <%= image_tag artist_ad.photo %>
+    <% end %>
+  </div>
 <% end %>
