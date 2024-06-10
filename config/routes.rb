@@ -53,6 +53,7 @@ end
 get '/dashboard', to: 'dashboard#dashboard'
 get '/search', to: 'searches#search'
 get '/map', to: 'map#show'
+get '/components', to: 'pages#components'
 
 
 

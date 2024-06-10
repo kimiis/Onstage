@@ -1,0 +1,26 @@
+<% ad = nil if local_assigns[:ad].nil? %>
+<% fill = false if local_assigns[:fill].nil? %>
+<% profile = nil if local_assigns[:profile].nil? %>
+
+<div class="<%= fill ? "m-card fill": "m-card"%>">
+  <div class="card-header">
+    <% if ad %>
+      <%= cl_image_tag(profile.photos[0].key, class:"avatar") %>
+    <% else %>
+      <div class="avatar"></div>
+    <% end %>
+    <div class="card-header-text-content">
+      <h3><%= ad ? profile.name : "La Petite Cuite" %></h3>
+      <small>12h</small>
+      <%= link_to("", profile ? profile.class == Artist ? artist_path(profile.id) : stage_path(profile.id) : dashboard_path) %>
+    </div>
+  </div>
+  <div class="card-body">
+    <p><%= ad ? ad.content : "Salut les artistes 🖖. Aujourd’hui nous souhaitons vous faire part d’un ..." %></p>
+    <% if ad %>
+      <%= cl_image_tag(ad.photo.key, class:"card-image") %>
+    <% else %>
+      <div class="card-image"></div>
+    <% end %>
+  </div>
+</div>
