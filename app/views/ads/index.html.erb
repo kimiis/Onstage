@@ -1,20 +1,11 @@
-<%= render("/shared/page_header", title: "Annonces") %>
-<div class="ad-container">
-  <div class="tabs" data-controller="tabs">
+<div class="tabs" data-controller="tabs">
     <div class="navigation" >
-        <%= link_to 'Stage ads', stage_ads_ads_path(@ad), class: "btn secondary", data: { action: 'click->tabs#load', tabs_target: 'link' } %>
-        <%= link_to 'Artist ads', artist_ads_ads_path(@ad), class: "btn secondary", data: { action: 'click->tabs#load', tabs_target: 'link' } %>
+      <ul>
+        <li><%= link_to 'Stage ads',  artist_ads_ads_path(@ad), data: { action: 'click->tabs#load', tabs_target: 'link' } %></li>
+        <li><%= link_to 'Artist ads', stage_ads_ads_path(@ad), data: { action: 'click->tabs#load', tabs_target: 'link' } %></li>
+      </ul>
     </div>
-    <div class="content" data-tabs-target="content">
-      <% @stage_ads.each do |stage_ad| %>
-        <%= render("shared/ad_card", ad:stage_ad, profile: stage_ad.stage, fill: true ) %>
-      <% end %>
-      <% @artist_ads.each do |artist_ad| %>
-        <%= render("shared/ad_card", ad:artist_ad, profile: artist_ad.artist, fill: true ) %>
-      <% end %>
 
-    </div>
+    <div class="content" data-tabs-target="content"></div>
 
   </div>
-
-</div>

@@ -2,10 +2,8 @@ class AdsController < ApplicationController
   before_action :set_ad, only: [:show, :edit, :destroy, :update]
 
   def index
-    # @artist_ads = ArtistAd.includes(:artist_ads)
-    # @stage_ads = StageAd.includes(:stage_ads)
-    @artist_ads = ArtistAd.all
-    @stage_ads = StageAd.all
+    @artist_ads = ArtistAd.includes(:artist_ads)
+    @stage_ads = StageAd.includes(:stage_ads)
   end
 
   def artist_ads
