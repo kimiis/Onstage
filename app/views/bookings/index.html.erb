@@ -1,15 +1,6 @@
 <h1>Mes réservations</h1>
 <div class="content">
-    <div class="m-card">
       <% @bookings.each do |booking|%>
-        <% booking.stage.photos.each do |photo| %>
-          <%= cl_image_tag(photo.key, class: "photos")  %>
-        <% end %>
-        <%= booking.stage.name %>
-        <%= booking.date_start %>
-        <%= booking.status %>
-        <hr>
+        <%= render("shared/booking_card", booking: booking, fill: true) %>
       <% end %>
-    </div>
 </div>
-
