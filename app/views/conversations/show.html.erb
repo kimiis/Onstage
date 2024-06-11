@@ -1,11 +1,13 @@
-<h1>Conversations#show</h1>
-<p>Find me in app/views/conversations/show.html.erb</p>
-<ul>
-  <% @messages.each do  |message| %>
-    <li><%= message.content %></li>
-  <% end %>
-</ul>
-<%= simple_form_for [@conversation, @message] do |f| %>
-  <%= f.input(:content) %>
-  <%= f.submit(turbo_method: "post") %>
-<% end %>
+<div class="conversation">
+  <div class="conversation-container">
+    <div class="conversation-messages">
+      <% @messages.each do  |message| %>
+        <%= render "conversations/message_bubble", message: message %>
+      <% end %>
+    </div>
+    <%= simple_form_for [@conversation, @message] do |f| %>
+      <%= f.input(:content, input_html: { class: 'input-message' }) %>
+      <%= f.submit("Envoyer", turbo_method: "post") %>
+    <% end %>
+  </div>
+</div>
