@@ -7,7 +7,7 @@
     </div>
     <%= simple_form_for [@conversation, @message] do |f| %>
       <%= f.input(:content, input_html: { class: 'input-message' }) %>
-      <%= f.submit("Envoyer", turbo_method: "post") %>
+      <%= f.submit("Envoyer", class: "btn primary btn-form", turbo_method: "post") %>
     <% end %>
   </div>
 </div>
