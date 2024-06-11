@@ -1,0 +1,10 @@
+.bookings{
+  padding-top: 80px;
+  .booking-container{
+    max-width: 768px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
