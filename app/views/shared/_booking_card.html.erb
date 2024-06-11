@@ -1,0 +1,17 @@
+<% booking = nil if local_assigns[:booking].nil? %>
+<% fill = false if local_assigns[:fill].nil? %>
+<div class="<%= fill ? "booking-card fill": "booking-card"%>">
+  <% if booking %>
+    <%= cl_image_tag(current_user.artist? ? booking.stage.photos[0].key : booking.artist.photos[0].key, class: "booking-card-avatar") %>
+  <% else %>
+    <div class="booking-card-avatar"></div>
+  <% end %>
+  <div class="booking-card-data">
+    <h3><%= booking ? current_user.artist? ? booking.stage.name : booking.artist.name : "Nom de la scène" %></h3>
+    <p><i class="fa-solid fa-calendar"> </i> <%= booking ? booking.date_start : "Dim 26 Mai"%>, 18h-23h</p>
+    <div class="booking-card-status">
+      <div class="booking-card-bubble pending"></div>
+      <p>En attente</p>
+    </div>
+  </div>
+</div>

@@ -5,8 +5,8 @@ class DashboardController < ApplicationController
     @last_ads = Booking.last_ads
     # raise
 
-    @artist = Artist.find_by(user: current_user)
-    @artist_id = @artist.id
+    @artist = Artist.find_by(user: current_user) if current_user.artist?
+    @artist_id = @artist.id if current_user.artist?
 
     # @stage = Stage.find_by(user: current_user)
     # @stage_id = @stage.id
