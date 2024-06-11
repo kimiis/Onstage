@@ -10,8 +10,8 @@
     <h3><%= booking ? current_user.artist? ? booking.stage.name : booking.artist.name : "Nom de la scène" %></h3>
     <p><i class="fa-solid fa-calendar"> </i> <%= booking ? booking.date_start : "Dim 26 Mai"%>, 18h-23h</p>
     <div class="booking-card-status">
-      <div class="booking-card-bubble pending"></div>
-      <p>En attente</p>
+      <div class="<%= "booking-card-bubble #{booking.status}"%>"></div>
+      <p><%= booking.status == "confirmed" ? "Confirmé": booking.status == "pending" ? "En attente" : "Annulée" %></p>
     </div>
   </div>
 </div>

@@ -145,11 +145,24 @@ h3, p{
       align-items: center;
       gap: 5px;
       .booking-card-bubble{
-        width: 15px;
-        height: 15px;
+        width: 10px;
+        height: 10px;
         border-radius: 50%;
         &.pending{
           background: rgb(255, 174, 0);
+          box-shadow: 0 0 10px rgba(255, 174, 0, 0.5);
+        }
+        &.confirmed{
+          background: rgb(0, 70, 199);
+          box-shadow: 0 0 10px rgba(0, 70, 199, 0.5);
+        }
+        &.passed{
+          background: rgb(22, 134, 0);
+          box-shadow: 0 0 10px rgba(255, 12, 12, 0.5);
+        }
+        &.canceled{
+          background: rgb(255, 12, 12);
+          box-shadow: 0 0 10px rgba(255, 12, 12, 0.5);
         }
       }
     }

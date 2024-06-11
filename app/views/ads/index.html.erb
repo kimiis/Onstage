@@ -1,20 +1,34 @@
 <%= render("/shared/page_header", title: "Annonces") %>
-<div class="ad-container">
+<div class="ads">
+  <div class="ads-filter">
+    <p>Filtres:</p>
+    <%= link_to("Tous", ads_path, class: (params[:p] == "all"|| params[:p].nil?) ? "active" : "")%>
+    <%= link_to("Artistes",  ads_path(p: "artists"), class: params[:p] == "artists" ? "active" : "") %>
+    <%= link_to("Scènes", ads_path(p: "stages"), class: params[:p] == "stages" ? "active" : "") %>
+  </div>
+  <div class="ads-container">
   <div class="tabs" data-controller="tabs">
-    <div class="navigation" >
-        <%= link_to 'Stage ads', stage_ads_ads_path(@ad), class: "btn secondary", data: { action: 'click->tabs#load', tabs_target: 'link' } %>
-        <%= link_to 'Artist ads', artist_ads_ads_path(@ad), class: "btn secondary", data: { action: 'click->tabs#load', tabs_target: 'link' } %>
-    </div>
     <div class="content" data-tabs-target="content">
-      <% @stage_ads.each do |stage_ad| %>
+      <% if params[:p] == "all"|| params[:p].nil? %>
+        <% @stage_ads.each do |stage_ad| %>
         <%= render("shared/ad_card", ad:stage_ad, profile: stage_ad.stage, fill: true ) %>
-      <% end %>
-      <% @artist_ads.each do |artist_ad| %>
+        <% end %>
+        <% @artist_ads.each do |artist_ad| %>
         <%= render("shared/ad_card", ad:artist_ad, profile: artist_ad.artist, fill: true ) %>
+        <% end %>
+      <% elsif params[:p] == "artists"%>
+        <% @artist_ads.each do |artist_ad| %>
+        <%= render("shared/ad_card", ad:artist_ad, profile: artist_ad.artist, fill: true ) %>
+        <% end %>
+      <% elsif params[:p] == "stages"%>
+        <% @stage_ads.each do |stage_ad| %>
+        <%= render("shared/ad_card", ad:stage_ad, profile: stage_ad.stage, fill: true ) %>
+        <% end %>
       <% end %>
 
     </div>
 
   </div>
 
+</div>
 </div>

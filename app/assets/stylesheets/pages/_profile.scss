@@ -53,7 +53,7 @@
     .profile-content{
       padding: 5px;
       .profile-news{
-        
+
       }
       .profile-photo{
         display: grid;
@@ -64,6 +64,12 @@
           height: 100px;
           object-fit: cover;
         }
+      }
+      .profile-planning{
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
       }
     }
   }
