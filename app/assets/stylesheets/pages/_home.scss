@@ -17,12 +17,106 @@
       height: 60px;
       width: 60px;
       margin: 0 auto;
+      animation: logo-animation 3s ease-in-out;
     }
     .greatting{
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
+      margin-top: 30px;
+      margin-bottom: 30px;
     }
+  }
+}
+
+.text-accueil {
+  margin-bottom: 30px;
+  p {
+    color: rgb(98, 95, 95);
+    font-size: 22px;
+  }
+}
+
+/* DEMO-SPECIFIC STYLES */
+.typewriter h1 {
+  color: $black;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  // border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  // letter-spacing: .15em; /* Adjust as needed */
+  animation:
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+}
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+/* The typewriter cursor effect */
+// @keyframes blink-caret {
+//   from, to { border-color: transparent }
+//   50% { border-color: orange }
+// }
+
+.image {
+  opacity: 0; /* Définir l'opacité initiale à 0 pour cacher l'image */
+  transition: opacity 3s ease; /* Transition de l'opacité sur une durée de 1 seconde avec une courbe d'accélération 'ease' */
+  transition-delay: 3s;
+}
+
+.image.visible {
+  opacity: 1; /* Lorsque la classe 'visible' est ajoutée, l'opacité devient 1, faisant apparaître l'image */
+}
+
+@keyframes logo-animation {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.5) rotate(-180deg);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+.button {
+  padding: 15px 30px;
+  font-size: 16px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-30deg);
+  animation: shimmer 1.5s infinite;
+  animation-timing-function: ease-in-out;
+  animation-delay: 3.5s; /* Adjust to achieve 5s interval */
+}
+
+@keyframes shimmer {
+  0% {
+      left: -100%;
+  }
+  50% {
+      left: 100%;
+  }
+  100% {
+      left: 100%;
   }
 }

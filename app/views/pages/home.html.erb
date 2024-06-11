@@ -2,11 +2,19 @@
   <div class="home-container">
     <%= image_tag("allstage_360.png", class: "logo-icon") %>
     <div class="greatting">
+      <%# <h1>Bienvenue sur</h1> %>
+      <div class="typewriter">
       <h1>Bienvenue sur</h1>
-      <%= image_tag("OnStage.png") %>
     </div>
-    <p>Scènes, offrez aux Artistes débutants la scène locale qu'ils méritent.</p>
-    <p>Artistes, exprimez votre Art. Trouvez la scène Locale qui vous révèle.</p>
-    <%= link_to("Commencer l'aventure", dashboard_path, class:"btn primary") %>
+      <%= image_tag("OnStage.png", class: "image") %>
+    </div>
+
+    <div class="text-accueil">
+      <p>Le site de rencontre <br> entre artistes et scènes locales.</p>
+    </div>
+        <%= link_to("Commencer l'aventure", dashboard_path, class:"btn primary button") %>
+
+    </div>
+
   </div>
 </div>
