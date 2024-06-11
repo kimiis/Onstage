@@ -1,5 +1,5 @@
 meta_product_name: "OnStage"
-meta_title: "OnStage - Product tagline"
-meta_description: "Arrête de chanter sous la douche, monte sur secène"
+meta_title: "OnStage - Arrête de chanter sous la douche, monte sur scène"
+meta_description: "Vous êtes un artiste et vous cherchez où vous produire ? Ou vous êtes une scène et vous recherchez des artistes ? Bienvenue sur On Stage !"
 meta_image: "cover.png" # should exist in `app/assets/images/`
-twitter_account: "@product_twitter_account" # required for Twitter Cards
+# twitter_account: "@product_twitter_account" # required for Twitter Cards
