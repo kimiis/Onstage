@@ -18,3 +18,4 @@ document.addEventListener("DOMContentLoaded", function() {
 //   image.classList.remove('rotate-scale-animation');
 //   image.classList.add('scale-back-animation'); // Ajoutez la classe d'animation pour revenir à l'échelle d'origine
 // });
+

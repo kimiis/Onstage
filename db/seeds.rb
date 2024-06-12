@@ -200,31 +200,31 @@ stage_kelly.save
 
 # nouvelles scènes
 stage_renaud = Stage.new({ user: renaud, name: "Les Berthoms", description: "L'équipe des Berthom Nantes vous reçoit tous les jours dans un endroit hyper accueillant rempli de bon gens pour prendre et donner du bon temps.", address: "1 bis cr Olivier de Clisson, 44000 NANTES", phone_number: "123-456-7890" })
-le_live_bar_photos.each do |photo|
-  stage_kelly.photos.attach(io: URI.open(photo), filename: "lesberthoms.jpg", content_type: "image/jpg")
+les_berthoms_photos.each do |photo|
+  stage_renaud.photos.attach(io: URI.open(photo), filename: "lesberthoms.jpg", content_type: "image/jpg")
 end
-stage_kelly.save
+stage_renaud.save
 
 stage_amanda = Stage.new({ user: amanda, name: "Le Delirium café", description: "Carte simple, sélection de bières pression et soirées musicales ou sportives pour ce restaurant-bar convivial.", address: "19 allée Baco, 44000 NANTES", phone_number: "123-456-7890" })
-le_live_bar_photos.each do |photo|
+le_delirium_photos.each do |photo|
   stage_amanda.photos.attach(io: URI.open(photo), filename: "ledeliriumcafe.jpg", content_type: "image/jpg")
 end
 stage_amanda.save
 
 stage_yoann = Stage.new({ user: yoann, name: "Le AK Shelter", description: "Un restaurant /bar a été aménagé autour d’un garage d’Harley Davidson.", address: "352 boulevard Marcel Paul, 44000 NANTES", phone_number: "123-456-7890" })
-le_live_bar_photos.each do |photo|
+le_ak_shelter_photos.each do |photo|
   stage_yoann.photos.attach(io: URI.open(photo), filename: "leakshelter.jpg", content_type: "image/jpg")
 end
 stage_yoann.save
 
 stage_vianney = Stage.new({ user: vianney, name: "John McByrne", description: "Pub Irlandais avec une ambiance de folie.", address: "21 rue des petites Ecuries, 44000 NANTES", phone_number: "123-456-7890" })
-le_live_bar_photos.each do |photo|
+john_mcbyrne_photos.each do |photo|
   stage_vianney.photos.attach(io: URI.open(photo), filename: "johnmcbyrne.jpg", content_type: "image/jpg")
 end
 stage_vianney.save
 
 stage_pascal = Stage.new({ user: pascal, name: "Le Labo", description: "Large carte de rhums du monde et cocktails créatifs dans un bar chaleureux et coloré, avec terrasse.", address: "19 rue Leon Blum, 44000 NANTES", phone_number: "123-456-7890" })
-le_live_bar_photos.each do |photo|
+le_labo_photos.each do |photo|
   stage_pascal.photos.attach(io: URI.open(photo), filename: "lelabo.jpg", content_type: "image/jpg")
 end
 stage_pascal.save
@@ -241,22 +241,22 @@ puts "created #{Booking.count} bookings"
 puts "create ads"
 ads_1 = ArtistAd.new({ content: "Hey ! Nous sommes dispo samedi prochain !", artist: artist_john })
 ads_1.photo.attach(io: URI.open("https://magazinediscothequeleblog.files.wordpress.com/2014/04/gallery-07.jpg"), filename: "dubinc.jpg", content_type: "image/jpg")
-ads_1.save
-ads_2 = StageAd.create!({ content: "Cherche 3 groupes en urgence !", stage: stage_erika })
+ads_1.save!
+ads_2 = StageAd.new({ content: "Cherche 3 groupes en urgence !", stage: stage_erika })
 ads_2.photo.attach(io: URI.open("https://lh3.googleusercontent.com/p/AF1QipMOu6MvQ6lhoisER6S3I1B86AOwP2D_0zGvrfis=s1600-w640"), filename: "dubinc.jpg", content_type: "image/jpg")
-ads_2.save
-ads_3 = ArtistAd.create!({ content: "J'adoooooore, trouver une scène rapidemeeeent", artist: artist_sarah })
+ads_2.save!
+ads_3 = ArtistAd.new({ content: "J'adoooooore, trouver une scène rapidemeeeent", artist: artist_sarah })
 ads_3.photo.attach(io: URI.open("https://www.francebleu.fr/s3/cruiser-production/2023/05/70690e4d-0dc3-44ea-88a4-ab4c284b744d/1200x680_sc_84643-ifln1noc14-whr.jpg"), filename: "dubinc.jpg", content_type: "image/jpg")
-ads_3.save
-ads_4 = StageAd.create!({ content: "Nous recherchons la nouvelle pépite Nantaise ! Contactez-nous.", stage: stage_tom })
+ads_3.save!
+ads_4 = StageAd.new({ content: "Nous recherchons la nouvelle pépite Nantaise ! Contactez-nous.", stage: stage_tom })
 ads_4.photo.attach(io: URI.open("https://images.schlouk-map.com/cache/gallery/uploads/images/places/le-chien-stupide-62583db415e1f3.88508420.png"), filename: "dubinc.jpg", content_type: "image/jpg")
-ads_4.save
-ads_5 = ArtistAd.create!({ content: "De la place pour 2 ? Ca tombe bien, on est 6 !", artist: artist_marc })
+ads_4.save!
+ads_5 = ArtistAd.new({ content: "De la place pour 2 ? Ca tombe bien, on est 6 !", artist: artist_marc })
 ads_5.photo.attach(io: URI.open("https://france3-regions.francetvinfo.fr/image/AJLHnfTh9u7Qb_KB3U9W9jVcEp4/1200x675/regions/2020/06/09/5edef8e42fe7f_vonpariahs_presse_2016_01_color_greggbrehin1.jpg"), filename: "dubinc.jpg", content_type: "image/jpg")
-ads_5.save
-ads_6 = StageAd.create!({ content: "Petite scène mais grands fêtards, nous cherchons petits musicines mais grande guitare.", stage: stage_kelly })
+ads_5.save!
+ads_6 = StageAd.new({ content: "Petite scène mais grands fêtards, nous cherchons petits musicines mais grande guitare.", stage: stage_kelly })
 ads_6.photo.attach(io: URI.open("https://unfuretdanslaville.files.wordpress.com/2014/01/nantes-live-bar.jpg"), filename: "dubinc.jpg", content_type: "image/jpg")
-ads_6.save
+ads_6.save!
 puts "created #{ArtistAd.count} & #{StageAd.count} ads"
 
 # seed conversations
