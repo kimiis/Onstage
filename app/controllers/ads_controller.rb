@@ -36,7 +36,7 @@ class AdsController < ApplicationController
     if @ad.save
       redirect_to dashboard_path, notice: 'Artist ad was successfully created.'
     else
-      render :new_artist_ad
+      render :new_artist_ad, status: :unprocessable_entity
     end
   end
 

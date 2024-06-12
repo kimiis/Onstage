@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Onstage</title>
+    <title>Onstage - arrête de chanter sous la douche</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -17,9 +17,7 @@
       <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
       <%= render 'shared/ios_pwa_links' %>
 
-      <link href="/assets/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-      <link href="/assets/myicon.ico" rel="shortcut icon" type="image/x-icon" />
-      <link href="/assets/mb-icon.png" rel="apple-touch-icon" type="image/png" />
+      <%= favicon_link_tag %>
 
       <!– Facebook Open Graph data –>
       <meta property="og:title" content= <%= meta_title %> />
