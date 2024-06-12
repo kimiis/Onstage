@@ -8,6 +8,9 @@ class StagesController < ApplicationController
 
   def show
     @bookings = @stage.bookings
+    if (!params[:p].nil? && !["news", "photos", "planning", "dispo", "about"].include?(params[:p]) || params[:p] == "planning")
+      redirect_to(stage_path(@stage))
+    end
   end
 
   def news
