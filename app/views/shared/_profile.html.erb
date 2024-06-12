@@ -79,13 +79,25 @@
         <% end %>
       </div>
     <% end %>
-  </div>
-  <% if params[:p] == "planning" %>
+    <% if params[:p] == "planning" %>
     <div class="profile-planning">
       <% @bookings.each do |booking| %>
         <%= render("shared/booking_card", booking: booking, fill: true) %>
       <% end %>
     </div>
   <% end %>
+  <% if params[:p] == "dispo" %>
+    <div class="profile-dispo">
+      <% @bookings.each do |booking| %>
+        <%= render("shared/booking_card", booking: booking, fill: true) %>
+      <% end %>
+    </div>
+  <% end %>
+  <% if params[:p] == "about" %>
+    <div class="profile-about">
+      <h3></h3>
+    </div>
+  <% end %>
+  </div>
 </div>
 </div>
