@@ -17,5 +17,9 @@ class ConversationsController < ApplicationController
   end
 
   def create
+    @stage_user = Stage.find(params[:stage_id]).user
+    @conversation = Conversation.create(name: "")
+    @messages = Message.create(content: "Bienvenue dans votre conversation. Merci de rester courtois.", sender: current_user, receiver: @stage_user, conversation: @conversation)
+    redirect_to(conversation_path(@conversation))
   end
 end
