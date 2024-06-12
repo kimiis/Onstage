@@ -2,6 +2,7 @@
 
 <div class="new-ad">
   <div class="new-ad-container">
+
     <%= form_with model: @ad, url: create_artist_ad_ads_path, local: true do |form| %>
 
       <div class="field">
@@ -13,6 +14,16 @@
         <%= form.label :photo %>
         <%= form.file_field :photo, class: "custom-file-input" %>
       </div>
+
+      <% if @ad.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+        <% @ad.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
       <div class="actions">
         <%= form.submit("Publier l'annonce", class: "btn primary large") %>
