@@ -200,31 +200,31 @@ stage_kelly.save
 
 # nouvelles scènes
 stage_renaud = Stage.new({ user: renaud, name: "Les Berthoms", description: "L'équipe des Berthom Nantes vous reçoit tous les jours dans un endroit hyper accueillant rempli de bon gens pour prendre et donner du bon temps.", address: "1 bis cr Olivier de Clisson, 44000 NANTES", phone_number: "123-456-7890" })
-le_live_bar_photos.each do |photo|
+les_berthoms_photos.each do |photo|
   stage_renaud.photos.attach(io: URI.open(photo), filename: "lesberthoms.jpg", content_type: "image/jpg")
 end
 stage_renaud.save
 
 stage_amanda = Stage.new({ user: amanda, name: "Le Delirium café", description: "Carte simple, sélection de bières pression et soirées musicales ou sportives pour ce restaurant-bar convivial.", address: "19 allée Baco, 44000 NANTES", phone_number: "123-456-7890" })
-le_live_bar_photos.each do |photo|
+le_delirium_photos.each do |photo|
   stage_amanda.photos.attach(io: URI.open(photo), filename: "ledeliriumcafe.jpg", content_type: "image/jpg")
 end
 stage_amanda.save
 
 stage_yoann = Stage.new({ user: yoann, name: "Le AK Shelter", description: "Un restaurant /bar a été aménagé autour d’un garage d’Harley Davidson.", address: "352 boulevard Marcel Paul, 44000 NANTES", phone_number: "123-456-7890" })
-le_live_bar_photos.each do |photo|
+le_ak_shelter_photos.each do |photo|
   stage_yoann.photos.attach(io: URI.open(photo), filename: "leakshelter.jpg", content_type: "image/jpg")
 end
 stage_yoann.save
 
 stage_vianney = Stage.new({ user: vianney, name: "John McByrne", description: "Pub Irlandais avec une ambiance de folie.", address: "21 rue des petites Ecuries, 44000 NANTES", phone_number: "123-456-7890" })
-le_live_bar_photos.each do |photo|
+john_mcbyrne_photos.each do |photo|
   stage_vianney.photos.attach(io: URI.open(photo), filename: "johnmcbyrne.jpg", content_type: "image/jpg")
 end
 stage_vianney.save
 
 stage_pascal = Stage.new({ user: pascal, name: "Le Labo", description: "Large carte de rhums du monde et cocktails créatifs dans un bar chaleureux et coloré, avec terrasse.", address: "19 rue Leon Blum, 44000 NANTES", phone_number: "123-456-7890" })
-le_live_bar_photos.each do |photo|
+le_labo_photos.each do |photo|
   stage_pascal.photos.attach(io: URI.open(photo), filename: "lelabo.jpg", content_type: "image/jpg")
 end
 stage_pascal.save
