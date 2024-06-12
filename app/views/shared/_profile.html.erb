@@ -34,12 +34,21 @@
             stage_path(artist_stage.id, p: "photos")) :
             "", class: params[:p] == "photos" ? "active" : "")
           %>
-          <%= link_to("PLANNING",
+          <% if artist_stage.class == Artist %>
+            <%= link_to("PLANNING",
             artist_stage ?
             (artist_stage.class == Artist ? artist_path(artist_stage.id, p: "planning") :
             stage_path(artist_stage.id, p: "planning")) :
             "", class: params[:p] == "planning" ? "active" : "")
           %>
+          <% else %>
+            <%= link_to("DISPO.",
+            artist_stage ?
+            (artist_stage.class == Artist ? artist_path(artist_stage.id, p: "dispo") :
+            stage_path(artist_stage.id, p: "dispo")) :
+            "", class: params[:p] == "dispo" ? "active" : "")
+          %>
+          <% end %>
           <%= link_to("A PROPOS",
             artist_stage ?
             (artist_stage.class == Artist ?
