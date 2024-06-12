@@ -19,7 +19,7 @@
     <div id="error_explanation">
       <ul>
         <% @ad.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+          <p class= "warning-photo"><i class="fa-solid fa-circle-exclamation"></i> <%= message.split(' ')[1..].join(' ') %></p>
         <% end %>
       </ul>
     </div>
