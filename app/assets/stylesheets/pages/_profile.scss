@@ -71,6 +71,16 @@
         flex-direction: column;
         gap: 10px;
       }
+      .profile-about{
+        .profile-about-data{
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          svg{
+            height: 15px;
+          }
+        }
+      }
     }
   }
 }
