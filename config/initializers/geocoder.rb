@@ -20,8 +20,8 @@ Geocoder.configure(
   # distances: :linear          # :spherical or :linear
 
   # Cache configuration
-  # cache_options: {
-  #   expiration: 2.days,
-  #   prefix: 'geocoder:'
-  # }
+  cache_options: {
+    expiration: 10.days,
+    prefix: 'geocoder:'
+  }
 )

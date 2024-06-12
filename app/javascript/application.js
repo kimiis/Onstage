@@ -4,10 +4,10 @@ import "controllers"
 import "@popperjs/core"
 import "bootstrap"
 
-document.addEventListener("DOMContentLoaded", function() {
-  const image = document.querySelector('.image');
-  image.classList.add('visible');
-});
+// document.addEventListener("DOMContentLoaded", function() {
+//   const image = document.querySelector('.image');
+//   image.classList.add('visible');
+// });
 
 // document.addEventListener("DOMContentLoaded", function() {
 //   const image = document.querySelector('.rotate-scale');
