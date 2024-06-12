@@ -139,3 +139,63 @@ header{
     }
   }
 }
+
+.conversation-header{
+  width: 100vw;
+  position: fixed;
+  padding: 10px;
+  background: $white;
+  box-shadow: $bottom-shadow;
+  .conversation-header-container{
+    max-width: 768px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .conversation-header-left-side{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .avatar{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: gray;
+        object-fit: cover;
+      }
+      svg{
+        height: 30px;
+        width: auto;
+      }
+      .conversation-interlocutor-data{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        position: relative;
+        h2{
+          margin: 0;
+          font-size: 20px;
+        }
+        a{
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          left: 0;
+          top: 0;
+        }
+      }
+    }
+    .conversation-header-right-side{
+      .menu-btn{
+        width: 35px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        svg{
+          height: 25px;
+        }
+      }
+    }
+  }
+}
