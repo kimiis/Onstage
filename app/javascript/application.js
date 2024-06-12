@@ -4,10 +4,10 @@ import "controllers"
 import "@popperjs/core"
 import "bootstrap"
 
-// document.addEventListener("DOMContentLoaded", function() {
-//   const image = document.querySelector('.image');
-//   image.classList.add('visible');
-// });
+document.addEventListener("DOMContentLoaded", function() {
+  const image = document.querySelector('.image');
+  image.classList.add('visible');
+});
 
 // document.addEventListener("DOMContentLoaded", function() {
 //   const image = document.querySelector('.rotate-scale');
@@ -18,3 +18,4 @@ import "bootstrap"
 //   image.classList.remove('rotate-scale-animation');
 //   image.classList.add('scale-back-animation'); // Ajoutez la classe d'animation pour revenir à l'échelle d'origine
 // });
+
