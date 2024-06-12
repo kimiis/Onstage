@@ -31,6 +31,12 @@ erika = User.create!(email: "erika@example.com", password: "secret")
 tom = User.create!(email: "tom@example.com", password: "secret")
 isa = User.create!(email: "misaarc@example.com", password: "secret")
 kelly = User.create!(email: "kelly@example.com", password: "secret")
+# nouveaux users
+renaud = User.create!(email: "renaud@example.com", password: "secret")
+amanda = User.create!(email: "amanda@example.com", password: "secret")
+yoann = User.create!(email: "yoann@example.com", password: "secret")
+vianney = User.create!(email: "vianney@example.com", password: "secret")
+pascal = User.create!(email: "pascal@example.com", password: "secret")
 puts "created #{User.count} users"
 
 # seed artist
@@ -131,6 +137,36 @@ le_live_bar_photos = [
   "https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/2853/1500x750/365856.jpg",
   "https://media.ouest-france.fr/v1/pictures/MjAxNjAxODZlNzMzMzgwM2I0NDQzMTEzNzA3MmE3ZDA0OTc2MzM?width=1260&height=708&focuspoint=50%2C25&cropresize=1&client_id=bpeditorial&sign=edafd945e70961b6572e0dbff6ca2ef230004017342c4aa400c7a1f5a63b4868"
 ]
+les_berthoms_photos = [
+  "https://cdn.prod.website-files.com/6389b7b6b699a6212ce2b12c/6409920a60b4128eedf5ab92_323587765_1123010798371492_331963757301009390_n.jpeg",
+  "https://cdn.prod.website-files.com/6389b7b6b699a6212ce2b12c/63bc0901b5c5238a8b2c076e_Berthom%20Nantes.jpeg",
+  "https://maison-g.fr/wp-content/uploads/2018/03/P1106458-e1554880403392.jpg",
+  "https://cdn.prod.website-files.com/6389b7b6b699a6212ce2b12c/63a5b91cb9432edbc4789f42_bar.bordeaux.1.jpeg"
+]
+le_delirium_photos = [
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKzUVYQGz7MHTKrhcWAmWZP2qX_CcCm5Ru2A&s",
+  "https://www.wik-nantes.fr/sites/default/files/styles/img_principale_contenu_interne/public/bar/img_1973.jpg?itok=EirUEscl",
+  "https://www.pagesjaunes.fr/media/agc/0e/31/86/00/00/32/1a/f6/1a/eb/5dd50e31860000321af61aeb/5dd50e31860000321af61aec.png",
+  "https://www.wik-nantes.fr/sites/default/files/styles/img_principale_contenu_interne/public/bar/img_1972.jpg?itok=EA9HaG_Z"
+]
+le_ak_shelter_photos = [
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEKa6GuuY-8xqlmExMkJE5KP_zfwBizpWMew&s",
+  "https://images.schlouk-map.com/cache/gallery/uploads/images/places/ak-shelter-6405b1452f5190.30889300.jpg",
+  "https://media-cdn.tripadvisor.com/media/photo-s/1c/54/fc/4b/ak-shelter-352-boulevard.jpg",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReFwaLeOclgE4aurXkp4wBDi3yfUy02Wd_Fg&s"
+]
+john_mcbyrne_photos = [
+  "https://www.pagesjaunes.fr/media/agc/24/a8/81/00/00/33/55/cf/37/72/5d3f24a88100003355cf3772/5d3f24a88100003355cf3773.jpg",
+  "https://images.schlouk-map.com/cache/gallery/uploads/images/places/john-mcbyrne-625828cacff0f5.77375469.png",
+  "https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/49808/original/402768.jpg",
+  "https://lh3.googleusercontent.com/p/AF1QipPUBUb3LPepfNOW9noRGX60bcg1lVZQVxvMcNpF=s1600-w640"
+]
+le_labo_photos = [
+  "https://www.cestpasnous.fr/wp-content/uploads/2016/12/labo_logo-min.jpg",
+  "https://lh3.googleusercontent.com/p/AF1QipPZ78rMCfOs7L1-COAEHglATtQsTjf28OvjjgHO=s1600-w640",
+  "https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/2858/1500x750/366749.jpg",
+  "https://www.lelabo-nantes.com/wp-content/uploads/2024/03/terrasse-700x394.jpg"
+]
 
 stage_tony = Stage.new({ user: tony, name: "Le Ferrailleur", description: "Le Ferrailleur, est depuis maintenant plus de 15 ans une référence de la scène rock/metal française. Lieu dédié à la découverte et à la diversité au travers d’une programmation éclectique", address: "21 Quai des Antilles, 44200 NANTES", phone_number: "123-456-7890" })
 le_ferrailleur_photos.each do |photo|
@@ -161,6 +197,37 @@ le_live_bar_photos.each do |photo|
   stage_kelly.photos.attach(io: URI.open(photo), filename: "lelivebar.jpg", content_type: "image/jpg")
 end
 stage_kelly.save
+
+# nouvelles scènes
+stage_renaud = Stage.new({ user: renaud, name: "Les Berthoms", description: "L'équipe des Berthom Nantes vous reçoit tous les jours dans un endroit hyper accueillant rempli de bon gens pour prendre et donner du bon temps.", address: "1 bis cr Olivier de Clisson, 44000 NANTES", phone_number: "123-456-7890" })
+le_live_bar_photos.each do |photo|
+  stage_kelly.photos.attach(io: URI.open(photo), filename: "lesberthoms.jpg", content_type: "image/jpg")
+end
+stage_kelly.save
+
+stage_amanda = Stage.new({ user: amanda, name: "Le Delirium café", description: "Carte simple, sélection de bières pression et soirées musicales ou sportives pour ce restaurant-bar convivial.", address: "19 allée Baco, 44000 NANTES", phone_number: "123-456-7890" })
+le_live_bar_photos.each do |photo|
+  stage_amanda.photos.attach(io: URI.open(photo), filename: "ledeliriumcafe.jpg", content_type: "image/jpg")
+end
+stage_amanda.save
+
+stage_yoann = Stage.new({ user: yoann, name: "Le AK Shelter", description: "Un restaurant /bar a été aménagé autour d’un garage d’Harley Davidson.", address: "352 boulevard Marcel Paul, 44000 NANTES", phone_number: "123-456-7890" })
+le_live_bar_photos.each do |photo|
+  stage_yoann.photos.attach(io: URI.open(photo), filename: "leakshelter.jpg", content_type: "image/jpg")
+end
+stage_yoann.save
+
+stage_vianney = Stage.new({ user: vianney, name: "John McByrne", description: "Pub Irlandais avec une ambiance de folie.", address: "21 rue des petites Ecuries, 44000 NANTES", phone_number: "123-456-7890" })
+le_live_bar_photos.each do |photo|
+  stage_vianney.photos.attach(io: URI.open(photo), filename: "johnmcbyrne.jpg", content_type: "image/jpg")
+end
+stage_vianney.save
+
+stage_pascal = Stage.new({ user: pascal, name: "Le Labo", description: "Large carte de rhums du monde et cocktails créatifs dans un bar chaleureux et coloré, avec terrasse.", address: "19 rue Leon Blum, 44000 NANTES", phone_number: "123-456-7890" })
+le_live_bar_photos.each do |photo|
+  stage_pascal.photos.attach(io: URI.open(photo), filename: "lelabo.jpg", content_type: "image/jpg")
+end
+stage_pascal.save
 puts "created #{Stage.count} stages"
 
 # seed booking
