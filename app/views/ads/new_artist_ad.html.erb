@@ -19,7 +19,7 @@
     <div id="error_explanation">
       <ul>
         <% @ad.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+          <li><%= message.split(' ')[1..].join(' ') %></li>
         <% end %>
       </ul>
     </div>
