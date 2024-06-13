@@ -1,7 +1,7 @@
 class DashboardController < ApplicationController
   def dashboard
     # recupere les 3 meilleur stages
-    @best_stages = Booking.best_stages
+    @best_stages = Stage.all.take(5)
     @last_ads = Booking.last_ads
     # raise
 

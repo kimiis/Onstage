@@ -52,11 +52,12 @@
     }
   }
   form {
+    padding-bottom: 20px;
     background: $white;
     box-shadow: $top-shadow;
     position: fixed;
     display: flex;
-    height: 60px;
+    height: 80px;
     width: 100vw;
     left: 0;
     top: 100vh;

@@ -1,50 +1,55 @@
-<%= form_with url: search_path, method: :get, local: true do |form| %>
-  <%= form.text_field :query, placeholder: 'Search...' %>
-  <%= form.submit 'Search' %>
+
+<div class="search">
+  <div class="search-container">
+    <%= render("shared/page_header", title: "Recherche") %>
+    <%= form_with url: search_path, method: :get, local: true do |form| %>
+  <%= form.text_field :query, placeholder: 'Artiste...', class: "input-text" %>
+  <%= form.submit 'Rechercher', class: "btn primary" %>
 <% end %>
 
-<div class="search-container">
-  <h1>Search Results for "<%= @query %>"</h1>
-
-  <% if @artists.present? %>
-    <h2>Artists</h2>
-    <ul>
-      <% @artists.each do |artist| %>
-        <li><%= link_to artist.name, artist_path(artist) %></li>
-      <% end %>
-    </ul>
+  <% if @query == "" %>
+  <h1>Search Resdivts for "<%= @query %>"</h1>
   <% end %>
 
-  <% if @stages.present? %>
-    <h2>Stages</h2>
-    <ul>
-      <% @stages.each do |stage| %>
-        <li><%= link_to stage.name, stage_path(stage) %></li>
-      <% end %>
-    </ul>
-  <% end %>
+    <% if @artists.present? %>
+      <h2 class= "title-marge-top">Artistes</h2>
+      <div class= "gap-card-container">
+        <% @artists.each do |artist| %>
+          <%= render "shared/artist_stage_card", profile: artist, fill: true %>
+        <% end %>
+      </div>
+    <% end %>
 
-  <% if @artist_ads.present?  %>
-    <h2>Ads</h2>
-    <ul>
-      <% @artist_ads.each do |ad| %>
-        <li><%= link_to 'Artists ads',  artist_ads_ads_path(@artist), data: { action: 'click->tabs#load', tabs_target: 'link' } %></li>
-      <% end %>
-    </ul>
-  <% end %>
+    <% if @stages.present? %>
+      <h2 class= "title-marge-top">Scènes</h2>
+      <div class= "gap-card-container">
+        <% @stages.each do |stage| %>
+          <%= render "shared/artist_stage_card", profile: stage, fill: true %>
+        <% end %>
+      </div>
+    <% end %>
 
-  <% if @stage_ads.present? %>
-    <h2>Ads</h2>
-    <ul>
-      <% @stage_ads.each do |ad| %>
+    <% if @artist_ads.present?  %>
+      <h2 class= "title-marge-top">Annonces</h2>
+      <div class= "gap-card-container">
+        <% @artist_ads.each do |ad| %>
+          <%= render "shared/ad_card", ad: ad, fill: true %>
+        <% end %>
+      </div>
+    <% end %>
 
-        <li><%= link_to 'Stages ads',  stage_ads_ads_path(@stage), data: { action: 'click->tabs#load', tabs_target: 'link' } %></li>
+    <% if @stage_ads.present? %>
+      <%# <h2 class= "title-marge-top">Annonces</h2> %>
+      <div class= "gap-card-container">
+        <% @stage_ads.each do |ad| %>
+      <%= render "shared/ad_card", ad: ad, fill: true %>
+        <% end %>
+      </div>
+    <% end %>
 
-      <% end %>
-    </ul>
-  <% end %>
+    <% if @artists.empty? && @stages.empty? && @stage_ads.empty? && @artist_ads.empty? %>
+      <p>Rien, pour le moment.</p>
+    <% end %>
 
-  <% if @artists.empty? && @stages.empty? && @stage_ads.empty? && @artist_ads.empty? %>
-    <p>No results found</p>
-  <% end %>
+  </div>
 </div>
