@@ -52,7 +52,7 @@
     }
   }
   form {
-    padding-bottom: 20px;
+    padding: 5px 15px 20px 15px;
     background: $white;
     box-shadow: $top-shadow;
     position: fixed;
@@ -61,7 +61,6 @@
     width: 100vw;
     left: 0;
     top: 100vh;
-    padding: 5px;
     gap: 5px;
     transform: translateY(-100%);
     .message_content{
