@@ -19,6 +19,9 @@
   background-color: #f9f9f9;
   cursor: pointer;
   }
+  label{
+    display: block;
+  }
   .warning-photo {
     color: $red;
   }

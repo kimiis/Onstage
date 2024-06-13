@@ -109,9 +109,8 @@
       </div>
     </div>
   <% end %>
+
   </div>
-
- <%= link_to 'CHAT', stage_conversation_path(artist_stage), data: {turbo_method: :post} %>
-
+  <%= link_to "Contacter #{artist_stage.name}", stage_conversation_path(artist_stage), class: 'btn primary', data: {turbo_method: :post} %>
 </div>
 </div>

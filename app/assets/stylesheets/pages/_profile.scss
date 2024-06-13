@@ -1,5 +1,7 @@
 .profile{
+  min-height: 100vh;
   padding-top: 60px;
+  position: relative;
   &-container{
     max-width: 768px;
     margin: 0 auto;
@@ -38,6 +40,7 @@
             margin: 0;
           }
           p{
+            font-size: 14px;
             &.rating{
               i{
                 color: goldh;
@@ -81,6 +84,12 @@
           }
         }
       }
+    }
+    .btn{
+      position: absolute;
+      transform: translate(-100%, -100%);
+      bottom: -1%;
+      right: -41%;
     }
   }
 }

@@ -1,10 +1,11 @@
 <%= render("/shared/page_header", title: "Annonces") %>
 <div class="ads">
   <div class="ads-filter">
-    <p>Filtres:</p>
-    <%= link_to("Tous", ads_path, class: (params[:p] == "all"|| params[:p].nil?) ? "active" : "")%>
-    <%= link_to("Artistes",  ads_path(p: "artists"), class: params[:p] == "artists" ? "active" : "") %>
-    <%= link_to("Scènes", ads_path(p: "stages"), class: params[:p] == "stages" ? "active" : "") %>
+    <div class="ads-filter-container">
+      <%= link_to("Tous", ads_path, class: (params[:p] == "all"|| params[:p].nil?) ? "active" : "")%>
+      <%= link_to("Artistes",  ads_path(p: "artists"), class: params[:p] == "artists" ? "active" : "") %>
+      <%= link_to("Scènes", ads_path(p: "stages"), class: params[:p] == "stages" ? "active" : "") %>
+    </div>
   </div>
   <div class="ads-container">
   <div class="tabs" data-controller="tabs">
