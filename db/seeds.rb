@@ -199,7 +199,7 @@ end
 stage_kelly.save
 
 # nouvelles scènes
-stage_renaud = Stage.new({ user: renaud, name: "Les Berthoms", description: "L'équipe des Berthom Nantes vous reçoit tous les jours dans un endroit hyper accueillant rempli de bon gens pour prendre et donner du bon temps.", address: "1 bis cr Olivier de Clisson, 44000 NANTES", phone_number: "123-456-7890" })
+stage_renaud = Stage.new({ user: renaud, name: "Les Berthoms", description: "L'équipe des Berthom Nantes vous reçoit tous les jours dans un endroit hyper accueillant rempli de bon gens pour prendre et donner du bon temps.", address: "1 Olivier de Clisson, 44000 NANTES", phone_number: "123-456-7890" })
 les_berthoms_photos.each do |photo|
   stage_renaud.photos.attach(io: URI.open(photo), filename: "lesberthoms.jpg", content_type: "image/jpg")
 end
