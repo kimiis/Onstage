@@ -25,22 +25,29 @@ john = User.create!(email: "john@example.com", password: "secret")
 eric = User.create!(email: "eric@example.com", password: "secret")
 sarah = User.create!(email: "sarah@example.com", password: "secret")
 marc = User.create!(email: "marc@example.com", password: "secret")
+yoann = User.create!(email: "yoann@example.com", password: "secret")
 nina = User.create!(email: "nina@example.com", password: "secret")
 tony = User.create!(email: "tony@example.com", password: "secret")
 erika = User.create!(email: "erika@example.com", password: "secret")
 tom = User.create!(email: "tom@example.com", password: "secret")
 isa = User.create!(email: "misaarc@example.com", password: "secret")
 kelly = User.create!(email: "kelly@example.com", password: "secret")
-# nouveaux users
 renaud = User.create!(email: "renaud@example.com", password: "secret")
 amanda = User.create!(email: "amanda@example.com", password: "secret")
-# yoann = User.create!(email: "yoann@example.com", password: "secret")
 vianney = User.create!(email: "vianney@example.com", password: "secret")
 pascal = User.create!(email: "pascal@example.com", password: "secret")
 puts "created #{User.count} users"
 
 # seed artist
 puts "create artist"
+les_wagonners_photos = [
+  "https://i.ibb.co/ZXfBLqR/IMG-7845.jpg",
+  "https://i.ibb.co/jMVr75P/IMG-7850.jpg",
+  "https://i.ibb.co/nmYCcsH/IMG-7853.jpg",
+  "https://i.ibb.co/K6gWmm9/IMG-7854.jpg"
+]
+
+
 c2c_photos = [
   "https://img.nrj.fr/rY4FoH5JIEtVoMHJ87F7Btf1cjg=/http%3A%2F%2Fmedia.nrj.fr%2F436x327%2F2012%2F11%2Fc2c_7953.jpg",
   "https://www.tsugi.fr/2023/wp-content/uploads/2023/01/capture-decran-2023-01-30-a-153118.png",
@@ -73,6 +80,12 @@ ko_ko_mo_photos = [
   "https://france3-regions.francetvinfo.fr/image/8XBEb8aQa-uByvieKDL9UsyJWVI/4032x3024/regions/2022/03/23/623b34c991114_img-6459-2.jpg",
   "https://static.actu.fr/uploads/2019/10/25260-191024181121912-0-960x640.jpg"
 ]
+
+artist_yoann = Artist.new({ user: yoann, bio: "Les wagonners est un groupe de musique super génial. Ces 2 gars là touchent à tout.", name: "Les Wagonners", address: "1 rue des cordeliers, 44000 NANTES", phone_number: "123-456-7890"})
+les_wagonners_photos.each do |photo|
+  artist_yoann.photos.attach(io: URI.open(photo), filename: "wagonners.jpg", content_type: "image/jpg")
+end
+artist_yoann.save
 
 artist_john = Artist.new({ user: john, bio: "Électro, Hip-Hop. C2C est un groupe de DJs nantais renommé pour ses performances de turntablism et ses morceaux électro-hip-hop innovants.", name: "C2C", address: "1 rue Massenet, 44000 NANTES", phone_number: "123-456-7890"})
 c2c_photos.each do |photo|
@@ -137,7 +150,7 @@ le_live_bar_photos = [
   "https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/2853/1500x750/365856.jpg",
   "https://media.ouest-france.fr/v1/pictures/MjAxNjAxODZlNzMzMzgwM2I0NDQzMTEzNzA3MmE3ZDA0OTc2MzM?width=1260&height=708&focuspoint=50%2C25&cropresize=1&client_id=bpeditorial&sign=edafd945e70961b6572e0dbff6ca2ef230004017342c4aa400c7a1f5a63b4868"
 ]
-les_berthoms_photos = [
+le_berthom_photos = [
   "https://cdn.prod.website-files.com/6389b7b6b699a6212ce2b12c/6409920a60b4128eedf5ab92_323587765_1123010798371492_331963757301009390_n.jpeg",
   "https://cdn.prod.website-files.com/6389b7b6b699a6212ce2b12c/63bc0901b5c5238a8b2c076e_Berthom%20Nantes.jpeg",
   "https://maison-g.fr/wp-content/uploads/2018/03/P1106458-e1554880403392.jpg",
@@ -199,9 +212,9 @@ end
 stage_kelly.save
 
 # nouvelles scènes
-stage_renaud = Stage.new({ user: renaud, name: "Les Berthoms", description: "L'équipe des Berthom Nantes vous reçoit tous les jours dans un endroit hyper accueillant rempli de bon gens pour prendre et donner du bon temps.", address: "1 Olivier de Clisson, 44000 NANTES", phone_number: "123-456-7890" })
-les_berthoms_photos.each do |photo|
-  stage_renaud.photos.attach(io: URI.open(photo), filename: "lesberthoms.jpg", content_type: "image/jpg")
+stage_renaud = Stage.new({ user: renaud, name: "Le Berthom", description: "L'équipe des Berthom Nantes vous reçoit tous les jours dans un endroit hyper accueillant rempli de bon gens pour prendre et donner du bon temps.", address: "1 Olivier de Clisson, 44000 NANTES", phone_number: "123-456-7890" })
+le_berthom_photos.each do |photo|
+  stage_renaud.photos.attach(io: URI.open(photo), filename: "leberthom.jpg", content_type: "image/jpg")
 end
 stage_renaud.save
 
@@ -232,9 +245,9 @@ puts "created #{Stage.count} stages"
 
 # seed booking
 puts "create bookings"
-booking_1 = Booking.create!({ status: 'confirmed', artist: artist_john, stage: stage_isa, date_start: Time.now, date_end: Time.now, rating_value: 3 })
-booking_2 = Booking.create!({ status: 'confirmed', artist: artist_eric, stage: stage_erika, date_start: Time.now, date_end: Time.now, rating_value: 4 })
-booking_3 = Booking.create!({ status: 'confirmed', artist: artist_sarah, stage: stage_isa, date_start: Time.now, date_end: Time.now, rating_value: 5 })
+booking_1 = Booking.create!({ status: 'confirmed', artist: artist_yoann, stage: stage_renaud, date_start: Time.now, date_end: Time.now, rating_value: 3 })
+# booking_2 = Booking.create!({ status: 'confirmed', artist: artist_eric, stage: stage_erika, date_start: Time.now, date_end: Time.now, rating_value: 4 })
+# booking_3 = Booking.create!({ status: 'confirmed', artist: artist_sarah, stage: stage_isa, date_start: Time.now, date_end: Time.now, rating_value: 5 })
 puts "created #{Booking.count} bookings"
 
 # seed ads
