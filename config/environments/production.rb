@@ -72,6 +72,7 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "onstage_production"
 
   config.action_mailer.perform_caching = false
+  config.cache_store = :redis_cache_store, { url: ENV['REDIS_URL'] }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
