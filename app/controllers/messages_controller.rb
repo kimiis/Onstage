@@ -9,7 +9,16 @@ class MessagesController < ApplicationController
     else
       @message.receiver = @conversation.messages.first.sender
     end
-    redirect_to(conversation_path(@conversation)) if @message.save
+    if @message.save
+      ConversationChannel.broadcast_to(
+        @conversation,
+        message: render_to_string(partial: "message", locals: { message: @message }),
+        sender_id: @message.sender.id
+      )
+      head :ok
+    else
+      # redirect_to(conversation_path(@conversation)) if @message.save
+    end
   end
 
   private

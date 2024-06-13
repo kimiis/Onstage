@@ -4,6 +4,7 @@ class ConversationsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
     @conversation = Conversation.find(params[:id])
     @messages = Message.where(conversation: @conversation)
     @message = Message.new
