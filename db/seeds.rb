@@ -34,7 +34,7 @@ kelly = User.create!(email: "kelly@example.com", password: "secret")
 # nouveaux users
 renaud = User.create!(email: "renaud@example.com", password: "secret")
 amanda = User.create!(email: "amanda@example.com", password: "secret")
-yoann = User.create!(email: "yoann@example.com", password: "secret")
+# yoann = User.create!(email: "yoann@example.com", password: "secret")
 vianney = User.create!(email: "vianney@example.com", password: "secret")
 pascal = User.create!(email: "pascal@example.com", password: "secret")
 puts "created #{User.count} users"
@@ -149,12 +149,12 @@ le_delirium_photos = [
   "https://www.pagesjaunes.fr/media/agc/0e/31/86/00/00/32/1a/f6/1a/eb/5dd50e31860000321af61aeb/5dd50e31860000321af61aec.png",
   "https://www.wik-nantes.fr/sites/default/files/styles/img_principale_contenu_interne/public/bar/img_1972.jpg?itok=EA9HaG_Z"
 ]
-le_ak_shelter_photos = [
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEKa6GuuY-8xqlmExMkJE5KP_zfwBizpWMew&s",
-  "https://images.schlouk-map.com/cache/gallery/uploads/images/places/ak-shelter-6405b1452f5190.30889300.jpg",
-  "https://media-cdn.tripadvisor.com/media/photo-s/1c/54/fc/4b/ak-shelter-352-boulevard.jpg",
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReFwaLeOclgE4aurXkp4wBDi3yfUy02Wd_Fg&s"
-]
+# le_ak_shelter_photos = [
+#   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEKa6GuuY-8xqlmExMkJE5KP_zfwBizpWMew&s",
+#   "https://images.schlouk-map.com/cache/gallery/uploads/images/places/ak-shelter-6405b1452f5190.30889300.jpg",
+#   "https://media-cdn.tripadvisor.com/media/photo-s/1c/54/fc/4b/ak-shelter-352-boulevard.jpg",
+#   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReFwaLeOclgE4aurXkp4wBDi3yfUy02Wd_Fg&s"
+# ]
 john_mcbyrne_photos = [
   "https://www.pagesjaunes.fr/media/agc/24/a8/81/00/00/33/55/cf/37/72/5d3f24a88100003355cf3772/5d3f24a88100003355cf3773.jpg",
   "https://images.schlouk-map.com/cache/gallery/uploads/images/places/john-mcbyrne-625828cacff0f5.77375469.png",
@@ -211,10 +211,10 @@ le_delirium_photos.each do |photo|
 end
 stage_amanda.save
 
-stage_yoann = Stage.new({ user: yoann, name: "Le AK Shelter", description: "Un restaurant /bar a été aménagé autour d’un garage d’Harley Davidson.", address: "352 boulevard Marcel Paul, 44000 NANTES", phone_number: "123-456-7890" })
-le_ak_shelter_photos.each do |photo|
-  stage_yoann.photos.attach(io: URI.open(photo), filename: "leakshelter.jpg", content_type: "image/jpg")
-end
+# stage_yoann = Stage.new({ user: yoann, name: "Le AK Shelter", description: "Un restaurant /bar a été aménagé autour d’un garage d’Harley Davidson.", address: "352 boulevard Marcel Paul, 44000 NANTES", phone_number: "123-456-7890" })
+# le_ak_shelter_photos.each do |photo|
+#   stage_yoann.photos.attach(io: URI.open(photo), filename: "leakshelter.jpg", content_type: "image/jpg")
+# end
 stage_yoann.save
 
 stage_vianney = Stage.new({ user: vianney, name: "John McByrne", description: "Pub Irlandais avec une ambiance de folie.", address: "21 rue des petites Ecuries, 44000 NANTES", phone_number: "123-456-7890" })
