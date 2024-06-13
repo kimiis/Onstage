@@ -8,6 +8,7 @@ class ArtistsController < ApplicationController
 
   def show
     @bookings = @artist.bookings
+    @user_artist = Artist.find(params[:id])
     @user = current_user
     if (!params[:p].nil? && !["news", "photos", "planning", "dispo", "about"].include?(params[:p]) || params[:p] == "dispo")
       redirect_to(artist_path(@artist))

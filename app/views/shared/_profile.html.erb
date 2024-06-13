@@ -111,6 +111,10 @@
   <% end %>
 
   </div>
-  <%= link_to "Contacter #{artist_stage.name}", stage_conversation_path(artist_stage), class: 'btn primary', data: {turbo_method: :post} %>
+
+  <% if current_user == artist_stage.user && params[:controller] == "artists" %>
+  <% else %>
+    <%= link_to "Contacter #{artist_stage.name}", stage_conversation_path(artist_stage), class: 'btn primary', data: {turbo_method: :post} %>
+  <% end %>
 </div>
 </div>
