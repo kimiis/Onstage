@@ -1,12 +1,17 @@
 <%= render("shared/conversation_header", conversation: @conversation) %>
-<div class="conversation">
+<div
+  class="conversation"
+  data-controller="conversation-subscription"
+  data-conversation-subscription-conversation-id-value="<%= @conversation.id %>"
+  data-conversation-subscription-current-user-id-value="<%= current_user.id %>"
+>
   <div class="conversation-container">
-    <div class="conversation-messages">
+    <div class="conversation-messages" data-conversation-subscription-target="messages">
       <% @messages.each do  |message| %>
-        <%= render "conversations/message_bubble", message: message %>
+        <%= render "messages/message", message: message %>
       <% end %>
     </div>
-    <%= simple_form_for [@conversation, @message] do |f| %>
+    <%= simple_form_for([@conversation, @message], html: { data: { action: "turbo:submit-end->conversation-subscription#resetForm" }, class: "d-flex" }) do |f| %>
       <%= f.input(:content, input_html: { class: 'input-message' }) %>
       <%= f.submit("Envoyer", class: "btn primary btn-form", turbo_method: "post") %>
     <% end %>

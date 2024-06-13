@@ -33,6 +33,7 @@ Rails.application.routes.draw do
 
   resources :conversations, only: [:index, :show] do
     resources :messages, only: [:create]
+    resources :bookings, only: [:create]
   end
 # resources :artist_ads
 # resources :stage_ads
