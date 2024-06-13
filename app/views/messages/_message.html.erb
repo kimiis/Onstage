@@ -1,7 +1,5 @@
 <div id="message-<%= message.id %>" class= "<%= message.sender?(current_user) ? "message sender" : "message receiver" %>" data-conversation-subscription-target="messages" >
   <div class="message-container">
     <p><%= message.content %></p>
-    <%= message.sender.id %>
-    <%= current_user.id %>
   </div>
 </div>
