@@ -1,0 +1,30 @@
+.search {
+  padding-top: 70px;
+  form {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+    height: 50px;
+    .btn {
+      height: 100%;
+    }
+    .input-text {
+      height: 100%;
+    }
+  }
+}
+.search-container {
+  padding: 10px;
+}
+
+.gap-card-container {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title-marge-top {
+  margin-top: 10px;
+}

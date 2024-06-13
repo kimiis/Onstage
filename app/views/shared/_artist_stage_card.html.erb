@@ -5,7 +5,7 @@
     <%= cl_image_tag(profile.photos[0].key, class:"avatar") %>
     <div class="card-header-text-content">
       <h3><%= profile.name %></h3>
-      <small><i class="fa-solid fa-star"></i> 4,3</small>
+      <small><i class="fa-solid fa-star"></i><%= rand(4.1..5).floor(1) %></small>
       <%= link_to("", profile.class == Artist ? artist_path(profile.id) : stage_path(profile.id)) %>
     </div>
   </div>

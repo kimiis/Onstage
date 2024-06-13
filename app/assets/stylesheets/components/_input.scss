@@ -13,6 +13,23 @@ input {
     height: 100%;
     width: 100%;
 }
+.input-text {
+  width: 100%; /* Pour prendre toute la largeur de son conteneur */
+  height: 30px; /* Hauteur par défaut */
+  padding: 10px; /* Espacement interne */
+  border: 1px solid #6e1066; /* Bordure grise */
+  border-radius: 5px; /* Coins arrondis */
+  font-size: 16px; /* Taille de la police */
+  font-family: Arial, sans-serif; /* Police de caractères */
+  background-color: #f9f9f9; /* Couleur de fond */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  resize: vertical; /* Permettre seulement le redimensionnement vertical */
+  transition: border-color 0.3s ease;
+  outline: 1px solid #6e106634;
+  &:focus {
+    outline: 2px solid #6e1066;
+  }
+}
 
 #file-upload-button {
   outline: 0;
