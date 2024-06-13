@@ -81,7 +81,7 @@ ko_ko_mo_photos = [
   "https://static.actu.fr/uploads/2019/10/25260-191024181121912-0-960x640.jpg"
 ]
 
-artist_yoann = Artist.new({ user: yoann, bio: "Les wagonners est un groupe de musique super génial. Ces 2 gars là touchent à tout.", name: "Les Wagonners", address: "1 rue des cordeliers, 44000 NANTES", phone_number: "123-456-7890"})
+artist_yoann = Artist.new({ user: yoann, bio: "Les wagonners est un groupe de musique super génial. Ces 2 gars là touchent à tout.", name: "Les Wagonners", address: "A0 Passage de la Poule Noire, 44000 NANTES", phone_number: "123-456-7890"})
 les_wagonners_photos.each do |photo|
   artist_yoann.photos.attach(io: URI.open(photo), filename: "wagonners.jpg", content_type: "image/jpg")
 end
@@ -246,8 +246,8 @@ puts "created #{Stage.count} stages"
 # seed booking
 puts "create bookings"
 booking_1 = Booking.create!({ status: 'confirmed', artist: artist_yoann, stage: stage_renaud, date_start: Time.now, date_end: Time.now, rating_value: 3 })
-# booking_2 = Booking.create!({ status: 'confirmed', artist: artist_eric, stage: stage_erika, date_start: Time.now, date_end: Time.now, rating_value: 4 })
-# booking_3 = Booking.create!({ status: 'confirmed', artist: artist_sarah, stage: stage_isa, date_start: Time.now, date_end: Time.now, rating_value: 5 })
+booking_2 = Booking.create!({ status: 'confirmed', artist: artist_eric, stage: stage_erika, date_start: Time.now, date_end: Time.now, rating_value: 4 })
+booking_3 = Booking.create!({ status: 'confirmed', artist: artist_sarah, stage: stage_isa, date_start: Time.now, date_end: Time.now, rating_value: 5 })
 puts "created #{Booking.count} bookings"
 
 # seed ads

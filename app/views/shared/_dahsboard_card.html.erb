@@ -1,0 +1,15 @@
+<% fill = false if local_assigns[:fill].nil? %>
+
+<div class="<%= fill ? "m-card fill": "m-card"%>">
+  <div class="card-header">
+    <%= cl_image_tag(profile.photos[0].key, class:"avatar") %>
+    <div class="card-header-text-content">
+      <h3><%= profile.name %></h3>
+      <small><i class="fa-solid fa-star"></i><%= rand(4.1..5).floor(1) %></small>
+      <%= link_to("", profile.class == Artist ? artist_path(profile.id) : stage_path(profile.id)) %>
+    </div>
+  </div>
+  <div class="card-body">
+    <%= cl_image_tag(profile.photos[0].key, class:"card-image") %>
+  </div>
+</div>
