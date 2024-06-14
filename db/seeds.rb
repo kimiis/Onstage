@@ -255,7 +255,7 @@ puts "create ads"
 ads_1 = ArtistAd.new({ content: "Hey ! Nous sommes dispo samedi prochain !", artist: artist_john })
 ads_1.photo.attach(io: URI.open("https://magazinediscothequeleblog.files.wordpress.com/2014/04/gallery-07.jpg"), filename: "dubinc.jpg", content_type: "image/jpg")
 ads_1.save!
-ads_2 = StageAd.new({ content: "Soirée cocktails! Venez nombreux!", stage: stage_ranaud })
+ads_2 = StageAd.new({ content: "Soirée cocktails! Venez nombreux!", stage: stage_renaud })
 ads_2.photo.attach(io: URI.open("https://c6bo-plongee-blog.fr/wp-content/uploads/2020/05/couverture-c6bo-voyage-blog-plongee-recettes-meilleurs-cocktails-kobby-mendez.jpg"), filename: "cocktail.jpg", content_type: "image/jpg")
 ads_2.save!
 ads_3 = ArtistAd.new({ content: "J'adoooooore, trouver une scène rapidemeeeent", artist: artist_sarah })
